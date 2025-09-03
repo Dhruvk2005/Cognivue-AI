@@ -1,4 +1,5 @@
 import React from 'react'
+import { Icon } from '@iconify/react/dist/iconify.js'
 
 const Dashboardtab = () => {
 
@@ -13,37 +14,77 @@ const Dashboardtab = () => {
     },
     {
       title: "Profit Margin",
-      Revenue:'30%'
+      Revenue: '30%'
     },
     {
       title: "Growth",
-      Revenue:"5%"
+      Revenue: "5%"
     }
   ]
 
   return (
     <div>
-      <div className='text-[black] pl-[20px] p-[10px] font-semibold  text-[25px]  ' >
-        Dashboard
-      </div>
-
-      <div className='p-[20px] flex  gap-[20px] ' >
-
-        {boxes.map((items) => (
 
 
+      <div className='w-full min-h-screen ' >
 
-          <div className='w-[250px] h-[150px] border-[2px] p-[15px] text-[#475467] border-[#EAECF0] text-[20px] rounded-[10px] ' >
-            {items.title}
+        <div className=' bg-[white] border-b-[2px] flex justify-between items-center ' >
 
-            <div className='text-[40px] text-[black]  font-semibold ' >
-              {items.Revenue}
+
+          <div className=' relative w-[400px] p-[12px] bg-[white]   ' >
+
+            <input className='  bg-black/10 backdrop-blur-sm
+ text-[black] w-[400px] rounded-[30px] p-[15px] ' type="text" placeholder='Search' />
+            <Icon className='absolute top-1/3 right-0 ' icon="ri:search-line" width="24" height="24" style={{ color: "#000" }} />
+
+          </div>
+
+          <div className='flex items-center gap-[30px] '  >
+            <Icon className=' cursor-pointer ' icon="basil:notification-solid" width="28" height="28" style={{ color: "#000" }} />
+
+            <div className="flex items-center gap-[10px] mr-[20px] bg-[url('/bg.jpg')] bg-opacity-0 p-[10px] bg-cover bg-center rounded-[30px] cursor-pointer ">
+
+              <Icon icon="ix:user-profile-filled" width="28" height="28" style={{ color: "#fff" }} />
+              <div className='flex items-center gap-[10px] ' >
+                <span className='text-[white] text-[18px] font-semibold  ' >Dhruv K</span>
+                <Icon icon="line-md:chevron-down" width="24" height="24" style={{ color: "#fff" }} />
+
+              </div>
 
             </div>
+
+
           </div>
-        ))}
+        </div>
+        <div className='text-[black] pl-[20px] p-[10px] font-semibold  text-[25px]  ' >
+          Dashboard
+        </div>
+
+        <div className='p-[20px] flex  gap-[20px] ' >
+
+          {boxes.map((items) => (
+
+
+
+            <div className='w-[250px] h-[150px] border-[2px] p-[15px] text-[#475467] border-[#EAECF0] text-[20px] rounded-[10px] ' >
+              {items.title}
+
+              <div className='text-[40px] text-[black]  font-semibold ' >
+                {items.Revenue}
+
+              </div>
+            </div>
+          ))}
+
+        </div>
+
+
+
+
 
       </div>
+
+
       <div>
 
       </div>

@@ -1,8 +1,9 @@
 import React from 'react'
 import { Icon } from '@iconify/react';
 import Link from 'next/link';
+import Dashboardtab from '../component/dashboardtab';
 
-const Nav = () => {
+const SideNav = () => {
 
   const options: any = [
     {
@@ -30,40 +31,31 @@ const Nav = () => {
   ]
 
   return (
-    <div className='bg-[white]' >
+    <div className='  min-h-screen bg-[white] flex ' >
       <div className="max-w-[300px]   bg-[black] h-[700px] bg-center bg-cover " >
         <div className='w-full p-[20px]' >
           <img className='w-[200px]  ' src="./logo1.png" alt="" />
-          
+
         </div >
-        
+
         <div className='w-full pl-[22px] flex flex-col gap-[20px]  ' >
           {options.map((items: any) => (
 
-            
 
-
-
-
-            <ul className='flex w-[250px] p-[10px] gap-[10px] transition-all rounded-[5px] hover:ml-[8px]  hover:bg-white/10 hover:text-white
+            <ul className='flex w-[280px] p-[10px] gap-[10px] transition-all rounded-[5px] hover:ml-[8px]  hover:bg-white/10 hover:text-white
  hover:bg-opacity-4 hover:cursor-pointer hover:border-l-[5px] ' >
               <li className='' >{items.icon}</li>
-              <li className='text-[20px]  text-[white]   ' >{items?.title}</li>
+              <li className='text-[20px] text-[white]'>{items?.title}</li>
             </ul>
-
-
-
 
           ))}
         </div>
 
       </div>
-      <div>
-
-      </div>
+     
 
     </div>
   )
 }
 
-export default Nav
+export default SideNav
