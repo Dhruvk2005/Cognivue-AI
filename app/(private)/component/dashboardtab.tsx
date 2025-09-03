@@ -26,12 +26,12 @@ const Dashboardtab = () => {
     <div>
 
 
-      <div className='w-full min-h-screen ' >
+      <div className='w-full min-h-screen   ' >
 
-        <div className=' bg-[white] border-b-[2px] flex justify-between items-center ' >
+        <div className=' bg-[white] border-b-[2px] flex-wrap flex justify-between items-center ' >
 
 
-          <div className=' relative w-[400px] p-[12px] bg-[white]   ' >
+          <div className=' relative  w-[400px] p-[12px] bg-[white]   ' >
 
             <input className='  bg-black/10 backdrop-blur-sm
  text-[black] w-[400px] rounded-[30px] p-[15px] ' type="text" placeholder='Search' />
@@ -39,7 +39,7 @@ const Dashboardtab = () => {
 
           </div>
 
-          <div className='flex items-center gap-[30px] '  >
+          <div className='flex  items-center gap-[30px] '  >
             <Icon className=' cursor-pointer ' icon="basil:notification-solid" width="28" height="28" style={{ color: "#000" }} />
 
             <div className="flex items-center gap-[10px] mr-[20px] bg-[url('/bg.jpg')] bg-opacity-0 p-[10px] bg-cover bg-center rounded-[30px] cursor-pointer ">
@@ -60,7 +60,7 @@ const Dashboardtab = () => {
           Dashboard
         </div>
 
-        <div className='p-[20px] flex  gap-[20px] ' >
+        <div className='p-[20px] flex flex-wrap  gap-[20px] ' >
 
           {boxes.map((items) => (
 

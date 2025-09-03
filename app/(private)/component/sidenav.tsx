@@ -31,7 +31,7 @@ const SideNav = () => {
   ]
 
   return (
-    <div className='  min-h-screen bg-[white] flex ' >
+    <div className='   bg-[white] flex ' >
       <div className="max-w-[300px]   bg-[black] h-[700px] bg-center bg-cover " >
         <div className='w-full p-[20px]' >
           <img className='w-[200px]  ' src="./logo1.png" alt="" />

@@ -11,12 +11,12 @@ const DashBoard = () => {
 
 
       <div className='w-full bg-[white] min-h-screen ' >
-    <div>
-      <Dashboardtab/>
-    </div>
+        <div>
+          <Dashboardtab />
+        </div>
 
-       
-    </div>
+
+      </div>
     </div>
   )
 }
