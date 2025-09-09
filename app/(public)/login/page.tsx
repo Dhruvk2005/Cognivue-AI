@@ -1,6 +1,36 @@
+'use client'
 import Link from "next/link"
+import { useState } from "react"
+import { LoginApi } from "@/api's/allapis"
+import { useRouter } from "next/navigation"
 const Login = () => {
 
+    const router = useRouter()
+
+    const [loginUser, setLoginUser] = useState({
+        email: "",
+        password: ""
+    })
+
+
+    const handleChange = (e: any) => {
+        setLoginUser({ ...loginUser, [e.target.name]: e.target.value })
+    }
+
+    const hadleLoginUser = async (e: React.FormEvent) => {
+        e.preventDefault()
+        try {
+            let res = await LoginApi(loginUser)
+            console.log("User Login successfully: ", res)
+            router.push("/dashboard")
+            
+
+        } catch (err) {
+            console.log("User does not logged In", err)
+
+        }
+
+    }
 
     return (
         <div className="w-full min-h-screen flex p-[10px] justify-center items-center bg-[url('/bg.jpg')] bg-cover bg-center bg-no-repeat lg:p-[0px] ">
@@ -33,34 +63,36 @@ const Login = () => {
                         </div>
 
                         <div className=" flex h-[auto] flex-wrap flex-col w-[70%] ">
+                            <form onSubmit={hadleLoginUser} action="">
 
-                    
-                            <div className="flex  flex-col gap-[5px]" >
-
-
-                                <label className="flex mt-[10px]  font-semibold gap-[10px]" htmlFor="Text">
-
-                                    Email
-
-                                </label>
-                                <input className="border-[grey] w-full border-[1px] rounded-[8px] p-[10px]   " type="wmail" placeholder="Enter your email" />
-                            </div>
-
-                            <div className="flex  flex-col gap-[5px]" >
+                                <div className="flex  flex-col gap-[5px]" >
 
 
-                                <label className="flex mt-[30px]  font-semibold gap-[10px]" htmlFor="Text">
+                                    <label className="flex mt-[10px]  font-semibold gap-[10px]" htmlFor="Text">
 
-                                    Password
+                                        Email
 
-                                </label>
-                                <input className="border-[grey] w-full border-[1px] rounded-[8px] p-[10px]  " type="password" placeholder="Enter your Password" />
-                            </div>
+                                    </label>
+                                    <input className="border-[grey] w-full border-[1px] rounded-[8px] p-[10px]   " name="email" type="email" onChange={handleChange} placeholder="Enter your email" />
+                                </div>
+
+                                <div className="flex  flex-col gap-[5px]" >
+
+
+                                    <label className="flex mt-[30px]  font-semibold gap-[10px]" htmlFor="Text">
+
+                                        Password
+
+                                    </label>
+                                    <input className="border-[grey] w-full border-[1px] rounded-[8px] p-[10px]  " name="password" onChange={handleChange} type="password" placeholder="Enter your Password" />
+                                </div>
+                         
 
 
                             <div>
                                 <button className="bg-[#002D72] w-full p-[10px] rounded-[8px] font-semibold  mt-[10px]  hover:cursor-pointer hover:bg-[#012761]  " >Submit</button>
                             </div>
+                               </form>
 
 
 

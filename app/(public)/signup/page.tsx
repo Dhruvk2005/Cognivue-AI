@@ -1,5 +1,45 @@
+'use client'
 import Link from "next/link"
+import { useRouter } from "next/navigation"
+import { SignUp } from "@/api's/allapis"
+import React, { FormEvent, useState } from "react"
 const Signup = () => {
+
+
+    const router = useRouter()
+
+    const userData = () => ({
+        name: "",
+        email: "",
+        password: ""
+    })
+
+
+    const [user, setUser] = useState(userData())
+    const [ loading, setLoading] = useState(false)
+
+    const handleChange = (e: any) => {
+        setUser({ ...user, [e.target.name]: e.target.value })
+    }
+
+    const handleSubmitUser = async(e: React.FormEvent)=>{
+        e.preventDefault()
+          setLoading(true)
+        try{
+             const res = await SignUp(user)
+             console.log("User Data: ",res)
+             router.push("/login")
+
+        }catch(err){
+            console.log("Error during signup:", err)
+        }finally{
+            setLoading(false)
+        }
+       
+       
+    }
+
+
 
 
     return (
@@ -32,17 +72,20 @@ const Signup = () => {
                             <p className=" text-[15px] text-center" >Cognivue AI transforms your ideas into intelligent solutions - sign up and start the journey today.</p>
                         </div>
 
+
                         <div className=" flex h-[auto] flex-wrap flex-col w-[70%] ">
+                            
+                        <form action="" onSubmit={handleSubmitUser}>
 
                             <div className="flex  flex-col gap-[5px]" >
 
 
                                 <label className="flex  font-semibold " htmlFor="Text">
 
-                                    First Name
+                                    Name
 
                                 </label>
-                                <input className="border-[grey] w-full border-[1px] rounded-[8px] p-[10px] " type="text" placeholder="Enter your First Name" />
+                                <input className="border-[grey] w-full border-[1px] rounded-[8px] p-[10px] " onChange={handleChange} name="name" type="text" value={user.name} placeholder="Enter your First Name" />
                             </div>
                             <div className="flex  flex-col gap-[5px]" >
 
@@ -52,7 +95,7 @@ const Signup = () => {
                                     Email
 
                                 </label>
-                                <input className="border-[grey] w-full border-[1px] rounded-[8px] p-[10px]   " type="wmail" placeholder="Enter your email" />
+                                <input className="border-[grey] w-full border-[1px] rounded-[8px] p-[10px]   " onChange={handleChange} name="email" type="email" value={user.email} placeholder="Enter your email" />
                             </div>
 
                             <div className="flex  flex-col gap-[5px]" >
@@ -63,7 +106,7 @@ const Signup = () => {
                                     Password
 
                                 </label>
-                                <input className="border-[grey] w-full border-[1px] rounded-[8px] p-[10px]  " type="password" placeholder="Enter your Password" />
+                                <input className="border-[grey] w-full border-[1px] rounded-[8px] p-[10px]  " onChange={handleChange} name="password" type="password" value={user.password} placeholder="Enter your Password" />
                             </div>
 
 
@@ -73,6 +116,7 @@ const Signup = () => {
 
 
 
+                        </form>
                         </div>
                         <div className="flex justify-center ">
                             <p className="flex gap-[5px]" >Already have an account,
