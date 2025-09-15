@@ -8,12 +8,16 @@
     "start": "next start"
   },
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
     "@iconify/react": "^6.0.0",
+    "@material-tailwind/react": "^3.0.0-beta.24",
+    "apexcharts": "^5.3.5",
     "axios": "^1.11.0",
     "google-fonts": "^1.0.0",
     "iconify": "^1.4.0",
     "next": "15.5.2",
     "react": "19.1.0",
+    "react-apexcharts": "^1.7.0",
     "react-dom": "19.1.0"
   },
   "devDependencies": {
