@@ -99,7 +99,7 @@ const Dashboardtab = () => {
 
           <div>
 
-            {/* <aiinsightchat/> */}
+          
 
            
            

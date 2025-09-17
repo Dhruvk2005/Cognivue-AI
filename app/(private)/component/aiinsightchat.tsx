@@ -1,6 +1,6 @@
 import React from 'react'
 
-const aiinsightchat = () => {
+const aiinsightcomponent = () => {
     return (
         <div className='bg-[#002A65] w-[40%] ' >
 
@@ -18,4 +18,4 @@ const aiinsightchat = () => {
     )
 }
 
-export default aiinsightchat
+export default aiinsightcomponent
