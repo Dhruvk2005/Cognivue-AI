@@ -3,7 +3,7 @@ import { cn } from "@/app/src/lib/utils";
 import { motion, MotionValue } from "motion/react";
 import React from "react";
 
-const transition = {
+const transition:any = {
   duration: 0,
   ease: "linear",
 };
