@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { Marquee } from "./marquee";
 import { MarqueeDemo } from "./marqueedemmo";
@@ -22,7 +22,26 @@ export default function AnimatedAuroraBackground() {
                 opacity: 0.4 + variation * 0.6,
             };
         });
+
+
+
     }, []);
+
+
+    const [show, setShow] = useState(false)
+
+
+    useEffect(() => {
+
+        const Timer = setTimeout(() => {
+
+            setShow(true)
+        }, 2000)
+
+        return () => clearTimeout(Timer)
+
+    }, [])
+
 
     return (
         <div className='relative w-full min-h-screen'>
@@ -36,16 +55,16 @@ export default function AnimatedAuroraBackground() {
                     <div className="flex items-center gap-[20px]">
                         <FloatingDockDemo />
                         <Link href={"/signup"} >
-                        <div>
-                            
-                            <button className=" w-[150px] px-10 py-3 bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-400
+                            <div>
+
+                                <button className=" w-[150px] px-10 py-3 bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-400
 text-white
 hover:scale-105 hover:shadow-lg text-white font-semibold rounded-full shadow-md 
                        hover:bg-[#1f1c82] hover:scale-105 hover:shadow-lg 
                        transition-all duration-200 ease-in-out hover:cursor-pointer">
-                                Sign Up
-                            </button>
-                        </div>
+                                    Sign Up
+                                </button>
+                            </div>
                         </Link>
                     </div>
                 </div>
@@ -91,6 +110,14 @@ hover:bg-white/10 hover:border-white/50
 
                 </div>
 
+                {show && (
+
+
+                    <div className="mt-[20px]">
+                        <Icon className=" " icon="line-md:arrow-down" width="24" height="24" style={{ color: "#fff" }} />
+                    </div>
+                )}
+
 
 
 
@@ -103,9 +130,9 @@ hover:bg-white/10 hover:border-white/50
 
             <div className="absolute inset-0 bg-gradient-to-br from-blue via-gray-900 to-black z-0"></div>
 
-            <div>
-                <Icon  className="relativerun " icon="line-md:arrow-down" width="24" height="24"  style={{color: "#fff"}} />
-            </div>
+
         </div>
-    );
+
+    )
 }
+

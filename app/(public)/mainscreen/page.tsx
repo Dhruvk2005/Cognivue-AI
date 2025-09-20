@@ -8,8 +8,15 @@ const Mainscreen = () => {
   return (
     <div>
 
+      
+
       <div className='' >
         <AnimatedAuroraBackground />
+      </div>
+
+
+      <div className='w-full flex justify-center' >
+        <img src="/workflow.png" alt="" />
       </div>
 
      
