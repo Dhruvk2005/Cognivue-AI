@@ -3,10 +3,11 @@ import AnimatedAuroraBackground from '@/app/(private)/component/bg'
 import { GlowingEffectDemoSecond } from '@/app/(private)/component/card'
 import { Marquee } from '@/app/(private)/component/marquee'
 import { MarqueeDemo } from '@/app/(private)/component/marqueedemmo'
+import Footer from '@/app/(private)/component/footer'
 
 const Mainscreen = () => {
   return (
-    <div>
+    <div className='' >
 
       
 
@@ -29,6 +30,11 @@ const Mainscreen = () => {
 
       <div className='' >
         <GlowingEffectDemoSecond />
+      </div>
+
+
+      <div className='mt-[40px]' >
+        <Footer/>
       </div>
 
 

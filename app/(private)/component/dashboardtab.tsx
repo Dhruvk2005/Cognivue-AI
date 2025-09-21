@@ -32,9 +32,9 @@ const Dashboardtab = () => {
     <div>
 
 
-      <div className='w-full min-h-screen   ' >
+      <div className='w-full min-h-screen bg-[black] bg-gradient-to-br from-blue via-gray-900 to-black   ' >
 
-        <div className=' bg-[white] border-b-[2px] flex-wrap flex justify-between items-center ' >
+        <div className=' border-b-[2px] flex-wrap flex justify-between items-center ' >
 
           <div className='text-[black] pl-[20px] p-[10px] font-semibold  text-[25px]  ' >
             Dashboard
@@ -61,7 +61,7 @@ const Dashboardtab = () => {
           </div>
         </div>
 
-        <div className=' relative  w-[400px] p-[12px] bg-[white]   ' >
+        <div className=' relative bg-[white]   w-[400px] p-[12px]    ' >
 
 
           <input className='  bg-black/10 backdrop-blur-sm
@@ -76,7 +76,7 @@ const Dashboardtab = () => {
 
 
 
-            <div className='w-[250px] h-[150px] bg-[#002A65]  border-[2px] p-[15px] text-[#475467] border-[#EAECF0] text-[white] text-[20px] rounded-[10px] ' >
+            <div className='w-[250px] h-[150px] bg-[#1E1E1E]  border-[1px] p-[15px] text-[#475467] border-[#EAECF0] text-[white] text-[20px] rounded-[10px] ' >
               {items.title}
 
               <div className='text-[40px] text-[white]  font-semibold ' >
@@ -99,10 +99,10 @@ const Dashboardtab = () => {
 
           <div>
 
-          
 
-           
-           
+
+
+
 
 
 

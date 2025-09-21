@@ -3,42 +3,43 @@ import { Marquee } from "./marquee";
 
 const reviews = [
   {
-    name: "Jack",
+    name: "Blink Pin",
     username: "@jack",
-    body: "I've never seen anything like this before. It's amazing. I love it.",
-    img: "https://avatar.vercel.sh/jack",
+    body: "Boosted our campaigns with AI-driven insights — faster decisions, better results.",
+    img: "/yo1.png",
   },
   {
-    name: "Jill",
+    name: "Express.com",
     username: "@jill",
-    body: "I don't know what to say. I'm speechless. This is amazing.",
-    img: "https://avatar.vercel.sh/jill",
+    body: "Cognivue AI helped us automate reports that used to take days. Now it's minutes.",
+    img: "yo3.png",
   },
   {
-    name: "John",
+    name: "RockUp",
     username: "@john",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/john",
+    body: "We discovered hidden trends in customer behavior that were impossible to see before.",
+    img: "/yo2.png",
   },
   {
-    name: "Jane",
+    name: "CHANEL",
     username: "@jane",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/jane",
+    body: "Clean dashboards and actionable insights — it feels like having a data team on demand.",
+    img: "yo4.png",
   },
   {
-    name: "Jenny",
+    name: "FedEx",
     username: "@jenny",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/jenny",
+    body: "Our logistics forecasting improved dramatically — fewer delays, better planning.",
+    img: "yo5.jpeg",
   },
   {
     name: "James",
     username: "@james",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/james",
+    body: "From messy spreadsheets to crystal-clear insights — this tool changed how we work.",
+    img: "yo6.png",
   },
 ];
+
 
 const firstRow = reviews.slice(0, reviews.length / 2);
 const secondRow = reviews.slice(reviews.length / 2);
