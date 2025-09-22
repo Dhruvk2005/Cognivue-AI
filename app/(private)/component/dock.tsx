@@ -46,7 +46,7 @@ export function FloatingDockDemo() {
     {
       title: "LinkedIn",
       icon: (
-       <Icon icon="mdi:linkedin" width="44" height="44"  style={{color: "#fff"}} />
+       <Icon className="" icon="mdi:linkedin"   style={{color: "#fff"}} />
       ),
       href: "https://www.linkedin.com/in/dhruv-khade-26779b281/",
     },
@@ -59,9 +59,9 @@ export function FloatingDockDemo() {
     },
   ];
   return (
-    <div className="flex items-center justify-center  w-full">
+    <div className="flex items-center justify-center  w-full ">
       <FloatingDock
-        mobileClassName="translate-y-20" // only for demo, remove for production
+        mobileClassName="translate-y" // only for demo, remove for production
         items={links}
       />
     </div>
