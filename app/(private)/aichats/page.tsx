@@ -5,7 +5,7 @@ import Orb from '../component/starbg'
 
 const AiChats = () => {
   return (
-    <div className='w-full h-full bg-[black] bg-gradient-to-br from-blue-900 via-gray-900 to-black'>
+    <div className='w-full h-[690px] bg-[black] bg-gradient-to-br from-blue-900 via-gray-900 to-black'>
       <div className='flex border-b-[1px]  p-[10px] items-center justify-between'>
 
         <div className='text-[18px] font-semibold '>

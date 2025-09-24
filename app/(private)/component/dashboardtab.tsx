@@ -5,6 +5,8 @@ import ApexChartsComponent from './linechart'
 import LineChartComponent from './linechart'
 import AiInsights from '../aiinsights/page'
 import aiinsightchat from './aiinsightchat'
+import ExpenseBreakdown from './expenseschart'
+import CustomerAcquisition from './acquistionchart'
 
 
 const Dashboardtab = () => {
@@ -65,10 +67,10 @@ const Dashboardtab = () => {
 
 
           <div className="relative w-[400px]">
-  <input
-    type="text"
-    placeholder="Search"
-    className="
+            <input
+              type="text"
+              placeholder="Search"
+              className="
       w-full
       bg-black/20 backdrop-blur-md
       text-white
@@ -80,14 +82,14 @@ const Dashboardtab = () => {
       focus:ring-2 focus:ring-white-500
       transition
     "
-  />
-  <Icon
-    icon="ri:search-line"
-    width={24}
-    height={24}
-    className="absolute top-1/2 right-3 -translate-y-1/2 text-white/80"
-  />
-</div>
+            />
+            <Icon
+              icon="ri:search-line"
+              width={24}
+              height={24}
+              className="absolute top-1/2 right-3 -translate-y-1/2 text-white/80"
+            />
+          </div>
 
 
         </div>
@@ -113,10 +115,56 @@ const Dashboardtab = () => {
 
 
 
-          <div className='p-[20px]  ' >
+          <div className=' w-full flex justify-between p-[20px]  ' >
 
             <LineChartComponent />
+            <ExpenseBreakdown />
 
+
+          </div>
+
+          <div className='p-[20px] gap-[30px] flex justify-between w-full' >
+
+            <div className='w-[50%]' >
+              <CustomerAcquisition />
+            </div>
+
+            <div className=' w-[50%] gap-[15px] flex flex-col' >
+
+
+
+              <div className='w-full  ' >
+                <div className='bg-[white] text-black rounded-[10px] p-[20px] '  >
+                  <h1 className='font-semibold' >AI Insights</h1>
+                  <div>
+                    <ul className='flex flex-col gap-[10px]' >
+                      <li>Expected revenue next month : 8%</li>
+                      <li>Top performing product: X</li>
+                      <li>Cost saving opportunities: Reduce Y expenses</li>
+                    </ul>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div className='w-full' >
+                <div className='bg-[white] text-black rounded-[10px] p-[20px] '  >
+                  <h1 className='font-semibold' >Recent activity</h1>
+                  <div>
+                    <ul className='flex flex-col gap-[10px]' >
+                      <li>Expected revenue next month : 8%</li>
+                      <li>Top performing product: X</li>
+                      <li>Cost saving opportunities: Reduce Y expenses</li>
+                    </ul>
+
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
           </div>
 
           <div>
