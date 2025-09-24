@@ -32,26 +32,26 @@ const Dashboardtab = () => {
     <div>
 
 
-      <div className='w-full min-h-screen bg-[black] bg-gradient-to-br from-blue via-gray-900 to-black   ' >
+      <div className='w-full min-h-screen bg-[black] bg-gradient-to-br from-blue-900 via-gray-900 to-black   ' >
 
-        <div className=' border-b-[2px] flex-wrap flex justify-between items-center ' >
+        <div className=' border-b-[1px] flex-wrap flex justify-between items-center ' >
 
-          <div className='text-[black] pl-[20px] p-[10px] font-semibold  text-[25px]  ' >
+          <div className='text-[white] font-semibold pl-[20px] p-[10px] text-[18px]  ' >
             Dashboard
           </div>
 
 
 
 
-          <div className='flex  items-center gap-[30px] '  >
-            <Icon className=' cursor-pointer ' icon="basil:notification-solid" width="28" height="28" style={{ color: "#000" }} />
+          <div className='flex  items-center gap-[30px] p-[10px] '  >
+            <Icon className=' cursor-pointer ' icon="basil:notification-solid" width="28" height="28" style={{ color: "#ffffffff" }} />
 
-            <div className="flex items-center gap-[10px] mr-[20px] bg-[url('/bg.jpg')] bg-opacity-0 p-[10px] bg-cover bg-center rounded-[30px] cursor-pointer ">
+            <div className="flex items-center gap-[10px] mr-[20px] bg-gradient-to-r p-[10px] rounded-[30px] from-indigo-500 via-purple-500 to-cyan-400 text-[white] bg-opacity-0 bg-cover bg-center rounded-[30px] cursor-pointer ">
 
-              <Icon icon="ix:user-profile-filled" width="28" height="28" style={{ color: "#fff" }} />
+              <Icon icon="ix:user-profile-filled" width="24" height="24" style={{ color: "#fff" }} />
               <div className='flex items-center gap-[10px] ' >
                 <span className='text-[white] text-[18px] font-semibold  ' >Dhruv K</span>
-                <Icon icon="line-md:chevron-down" width="24" height="24" style={{ color: "#fff" }} />
+                <Icon icon="line-md:chevron-down" width="20" height="20" style={{ color: "#fff" }} />
 
               </div>
 
@@ -61,12 +61,34 @@ const Dashboardtab = () => {
           </div>
         </div>
 
-        <div className=' relative bg-[white]   w-[400px] p-[12px]    ' >
+        <div className=' relative   w-[400px] p-[12px]    ' >
 
 
-          <input className='  bg-black/10 backdrop-blur-sm
- text-[black] w-[400px] rounded-[30px] p-[15px] ' type="text" placeholder='Search' />
-          <Icon className='absolute top-1/3 right-0 ' icon="ri:search-line" width="24" height="24" style={{ color: "#000" }} />
+          <div className="relative w-[400px]">
+  <input
+    type="text"
+    placeholder="Search"
+    className="
+      w-full
+      bg-black/20 backdrop-blur-md
+      text-white
+      placeholder-gray-400
+      rounded-full
+      px-4 py-2
+      border border-white/20
+      focus:outline-none
+      focus:ring-2 focus:ring-white-500
+      transition
+    "
+  />
+  <Icon
+    icon="ri:search-line"
+    width={24}
+    height={24}
+    className="absolute top-1/2 right-3 -translate-y-1/2 text-white/80"
+  />
+</div>
+
 
         </div>
 

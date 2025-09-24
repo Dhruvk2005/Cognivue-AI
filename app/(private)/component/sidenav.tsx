@@ -1,27 +1,32 @@
+'use client'
 import React from 'react'
 import { Icon } from '@iconify/react';
 import Link from 'next/link';
 import Dashboardtab from '../component/dashboardtab';
 
-const SideNav = () => {
+const SideNav = (props: any) => {
 
   const options: any = [
     {
       title: "Dashboard",
-      icon: <Icon icon="tabler:home-filled" width="24" height="27" style={{ color: "#fff" }} />
+      icon: <Icon icon="tabler:home-filled" width="24" height="27" style={{ color: "#fff" }} />,
+      href: '/dashboard'
     },
     {
       title: 'Upload Data',
-      icon: <Icon icon="iconoir:upload-data-window" width="24" height="27" style={{ color: "#fff" }} />
+      icon: <Icon icon="iconoir:upload-data-window" width="24" height="27" style={{ color: "#fff" }} />,
+      href:'/uploaddata'
     },
     {
       title: 'AI Insights',
-      icon: <Icon icon="token:ait" width="24" height="27" style={{ color: '#fff' }} />
+      icon: <Icon icon="token:ait" width="24" height="27" style={{ color: '#fff' }} />,
+      href: "/aiinsights"
 
     },
     {
       title: 'AI Chat',
-      icon: <Icon icon="ri:chat-ai-fill" width="24" height="27" style={{ color: "#fff" }} />
+      icon: <Icon icon="ri:chat-ai-fill" width="24" height="27" style={{ color: "#fff" }} />,
+      href: '/aichats'
     },
     {
       title: "Profile",
@@ -31,30 +36,41 @@ const SideNav = () => {
   ]
 
   return (
-    <div className='   bg-[white] flex ' >
+    <div className='   bg-[white] flex  ' >
       <div className="max-w-[300px]   bg-[black] h-[700px] bg-center bg-cover " >
         <div className='w-full p-[20px]' >
           <img className='w-[200px]  ' src="./logo1.png" alt="" />
 
         </div >
 
-        <div className='w-full pl-[22px] flex flex-col gap-[20px]  ' >
-          {options.map((items: any) => (
+        <div className="w-full pl-[22px] flex flex-col gap-[20px]">
+          <ul className="flex flex-col gap-[20px]">
+            {options.map((items: any, index: number) => (
 
+               <Link
+                  href={items.href}
+                  
+                >
 
-            <ul className='flex w-[280px] p-[10px] gap-[10px] transition-all rounded-[5px] hover:ml-[8px]  hover:bg-white/10 hover:text-white
- hover:bg-opacity-4 hover:cursor-pointer hover:border-l-[5px] ' >
-              <li className='' >{items.icon}</li>
-              <li className='text-[20px] text-[white]'>{items?.title}</li>
-            </ul>
-
-          ))}
-        </div>
-
+              <li
+                key={items.id || index}
+                className="flex w-[280px] p-[10px] gap-[10px] transition-all rounded-[5px] hover:ml-[8px] hover:bg-white/10 hover:text-white hover:bg-opacity-4 hover:cursor-pointer hover:border-l-[5px]"
+              >
+               
+                  {items.icon}
+                  <span className="text-[20px] text-white">{items?.title}</span>
+              </li>
+                  </Link>
+              
+            ))}
+        </ul>
       </div>
-     
+
 
     </div>
+
+
+    </div >
   )
 }
 
