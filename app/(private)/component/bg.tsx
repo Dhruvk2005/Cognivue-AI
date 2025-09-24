@@ -29,6 +29,7 @@ export default function AnimatedAuroraBackground() {
 
 
     const [show, setShow] = useState(false)
+    // const [effectDone, setEffectDone] = useState(false)
 
 
     useEffect(() => {
@@ -42,6 +43,15 @@ export default function AnimatedAuroraBackground() {
 
     }, [])
 
+
+    // useEffect(()=>{
+    //     if(!effectDone){
+    //         document.body.style.overflow = "hidden"
+    //     }else{
+    //         document.body.style.overflow = "auto"
+    //     }
+
+    // },[effectDone])
 
     return (
         <div className='relative w-full min-h-screen'>
@@ -121,10 +131,11 @@ hover:bg-white/10 hover:border-white/50
 
 
 
-
+{/* {!effectDone &&( */}
                 <div className="relative w-full -mt-[200px] z-10">
                     <GoogleGeminiEffectDemo />
                 </div>
+{/* )} */}
             </div>
 
 
