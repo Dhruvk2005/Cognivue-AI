@@ -31,7 +31,7 @@ const Dashboardtab = () => {
   ]
 
   return (
-    <div>
+    <div className='select-none' >
 
 
       <div className='w-full min-h-screen bg-[black] bg-gradient-to-br from-blue-900 via-gray-900 to-black   ' >
@@ -100,7 +100,7 @@ const Dashboardtab = () => {
 
 
 
-            <div className='w-[250px] h-[150px] bg-[#1E1E1E]  border-[1px] p-[15px] text-[#475467] border-[#EAECF0] text-[white] text-[20px] rounded-[10px] ' >
+            <div className='w-[250px] h-[150px] bg-white/5 border-[1px] p-[15px] text-[#475467] border-[#EAECF0] text-[white] text-[20px] rounded-[10px] ' >
               {items.title}
 
               <div className='text-[40px] text-[white]  font-semibold ' >

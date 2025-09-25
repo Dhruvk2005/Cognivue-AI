@@ -5,7 +5,7 @@ import Orb from '../component/starbg'
 
 const AiChats = () => {
   return (
-    <div className='w-full h-[690px] bg-[black] bg-gradient-to-br from-blue-900 via-gray-900 to-black'>
+    <div className='w-full select-none h-[690px] bg-[black] bg-gradient-to-br from-blue-900 via-gray-900 to-black'>
       <div className='flex border-b-[1px]  p-[10px] items-center justify-between'>
 
         <div className='text-[18px] font-semibold '>
@@ -33,7 +33,7 @@ const AiChats = () => {
       </div>
 
       <div>
-        <div className='relative' style={{ width: '100%', height: '600px', position: 'relative' }}>
+        <div className='relative  ' style={{ width: '100%', height: '600px', position: 'relative' }}>
           <Orb
             hoverIntensity={0.5}
             rotateOnHover={true}

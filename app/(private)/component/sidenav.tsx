@@ -4,6 +4,8 @@ import { Icon } from '@iconify/react';
 import Link from 'next/link';
 import Dashboardtab from '../component/dashboardtab';
 import { div } from 'motion/react-m';
+import { useState } from 'react';
+import { tree } from 'next/dist/build/templates/app-page';
 
 const SideNav = (props: any) => {
 
@@ -32,16 +34,29 @@ const SideNav = (props: any) => {
     {
       title: "Profile",
       icon: <Icon icon="ix:user-profile-filled" width="24" height="27" style={{ color: "#fff" }} />,
-      href: '/login'
+      href: '/profile'
     }
   ]
 
+
+  const [showNav, setShowNav] = useState(false)
+
   return (
-    <div className='flex'>
-     
-      <div className="fixed top-0 left-0 h-screen w-[300px] bg-black flex flex-col">
-        <div className='w-full p-[20px]'>
+    <div className='flex select-none '>
+
+
+
+
+      <div className={`fixed top-0 left-0 h-screen w-[300px]  bg-[#0b0b0b]  flex flex-col transform transition-transform duration-300 ${showNav ? "translate-x-0" : "-translate-x-full"} `}>
+
+
+        <div className='w-full flex justify-between items-center p-[20px]'>
+
           <img className='w-[200px]' src="./logo1.png" alt="Logo" />
+          <div className='-mt-[25px]' >
+
+            <Icon className='cursor-pointer'  onClick={() => setShowNav(false)} icon="line-md:menu-fold-left" width="24" height="24" style={{ color: "#fff" }} />
+          </div>
         </div>
 
         <div className="w-full pl-[22px] flex flex-col gap-[20px] mt-[20px]">
@@ -58,10 +73,22 @@ const SideNav = (props: any) => {
         </div>
       </div>
 
-    
-      <div className="ml-[300px] flex-1">
+
+      <div className={`${showNav ? "ml-[300px]" : "ml-0"} transition-all duration-300 flex-1`}>
+
+        {!showNav && (
+
+          <div className='cursor-pointer' onClick={() => setShowNav(true)} >
+            <Icon  className='absolute top-[50]  bg-[#0b0b0b]  ml-[10px] cursor-pointer ' icon="line-md:menu-fold-right" width="24" height="24" style={{ color: "#fff" }} />
+          </div>
+        )
+        }
         {props.children}
       </div>
+
+
+
+
     </div>
 
   )
