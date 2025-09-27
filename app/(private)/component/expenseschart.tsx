@@ -10,7 +10,7 @@ const expenseData = [
 
 export default function ExpenseBreakdown() {
   return (
-    <div className="w-80 bg-white rounded-lg p-6 shadow-sm">
+    <div className="w-120 bg-white rounded-lg p-6 shadow-sm">
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
         <h3 className="text-lg font-semibold text-gray-900">Expense Breakdown</h3>
@@ -21,7 +21,7 @@ export default function ExpenseBreakdown() {
 
       <div className="flex items-center gap-6">
         {/* Donut Chart */}
-        <div className="w-32 h-32">
+        <div className="w-52 h-52">
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <Pie
@@ -49,7 +49,7 @@ export default function ExpenseBreakdown() {
                 className="w-3 h-3 rounded-full" 
                 style={{ backgroundColor: item.color }}
               />
-              <span className="text-sm text-gray-700">{item.name}</span>
+              <span className="text-[20px] text-gray-700">{item.name}</span>
             </div>
           ))}
         </div>

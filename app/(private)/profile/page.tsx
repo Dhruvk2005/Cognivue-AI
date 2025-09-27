@@ -1,5 +1,6 @@
 import React from 'react'
 import { Icon } from '@iconify/react/dist/iconify.js'
+import Link from 'next/link'
 
 const Profile = () => {
     return (
@@ -12,16 +13,26 @@ const Profile = () => {
                     </div>
                     <div className='flex items-center gap-[10px]'>
                         <div className='flex items-center bg-[white] text-[black] gap-[5px] p-[10px] rounded-[30px]'>
+                            <Link
+                            href={"/signup"}
+                            >
                             <div className='text-[15px]' >
                                 Sign up
                             </div>
+                            </Link>
 
                         </div>
+                        
 
-                        <div className='flex text-[15px]  gap-[5px] items-center bg-gradient-to-r p-[10px] rounded-[30px] from-indigo-500 via-purple-500 to-cyan-400 text-[white]'>
+                        <div className='flex text-[15px]  gap-[5px] items-center  p-[10px] rounded-[30px]  bg-gradient-to-r from-blue-500 to-purple-600 text-[white]'>
+                            <Link
+                            href={"/login"}
+                        
+                            >
                             <div>
                                 Log in
                             </div>
+                            </Link>
 
                         </div>
                     </div>

@@ -14,8 +14,12 @@ export const SignUp = async (data: any) => {
             data: data,
             headers: {
                 "content-type": "application/json "
-            }
+            },
+             
         })
+      localStorage.setItem("username", res.data.name)
+      localStorage.setItem("email", res.data.email)
+    
         return res.data
 
     } catch (err) {
@@ -34,6 +38,7 @@ export const LoginApi = async(data:any)=>{
                 "content-type" : "application/json"
             }
         })
+        
 
         return res.data
         

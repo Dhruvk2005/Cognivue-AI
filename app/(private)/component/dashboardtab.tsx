@@ -48,7 +48,7 @@ const Dashboardtab = () => {
           <div className='flex  items-center gap-[30px] p-[10px] '  >
             <Icon className=' cursor-pointer ' icon="basil:notification-solid" width="28" height="28" style={{ color: "#ffffffff" }} />
 
-            <div className="flex items-center gap-[10px] mr-[20px] bg-gradient-to-r p-[10px] rounded-[30px] from-indigo-500 via-purple-500 to-cyan-400 text-[white] bg-opacity-0 bg-cover bg-center rounded-[30px] cursor-pointer ">
+            <div className="flex items-center gap-[10px] mr-[20px] bg-gradient-to-r p-[10px]  bg-gradient-to-r from-blue-500 to-purple-600 text-[white] bg-opacity-0 bg-cover bg-center rounded-[30px] cursor-pointer ">
 
               <Icon icon="ix:user-profile-filled" width="24" height="24" style={{ color: "#fff" }} />
               <div className='flex items-center gap-[10px] ' >
@@ -94,13 +94,13 @@ const Dashboardtab = () => {
 
         </div>
 
-        <div className='p-[20px] flex flex-wrap  gap-[20px] ' >
+        <div className='p-[20px] flex  flex-wrap  gap-[20px] ' >
 
           {boxes.map((items) => (
 
 
 
-            <div className='w-[250px] h-[150px] bg-white/5 border-[1px] p-[15px] text-[#475467] border-[#EAECF0] text-[white] text-[20px] rounded-[10px] ' >
+            <div className='w-[270px] h-[150px]  bg-white/5 border-[1px] p-[15px] text-[#475467] border-[#EAECF0] text-[white] text-[20px] rounded-[10px] ' >
               {items.title}
 
               <div className='text-[40px] text-[white]  font-semibold ' >
@@ -115,7 +115,7 @@ const Dashboardtab = () => {
 
 
 
-          <div className=' w-full flex justify-between p-[20px]  ' >
+          <div className=' w-full flex gap-[30px] p-[20px]  ' >
 
             <LineChartComponent />
             <ExpenseBreakdown />

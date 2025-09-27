@@ -21,7 +21,7 @@ const AiChats = () => {
             </div>
           </div>
 
-          <div className='flex text-[15px]  gap-[5px] items-center bg-gradient-to-r p-[10px] rounded-[30px] from-indigo-500 via-purple-500 to-cyan-400 text-[white]'>
+          <div className='flex text-[15px]  gap-[5px] items-center bg-gradient-to-r p-[10px] rounded-[30px]  bg-gradient-to-r from-blue-500 to-purple-600 text-[white]'>
             <div>
               New Chat
             </div>
