@@ -45,7 +45,7 @@ const Dashboardtab = () => {
 
 
 
-          <div className='flex  items-center gap-[30px] p-[10px] '  >
+          <div className='flex flex-wrap  items-center gap-[30px] p-[10px] '  >
             <Icon className=' cursor-pointer ' icon="basil:notification-solid" width="28" height="28" style={{ color: "#ffffffff" }} />
 
             <div className="flex items-center gap-[10px] mr-[20px] bg-gradient-to-r p-[10px]  bg-gradient-to-r from-blue-500 to-purple-600 text-[white] bg-opacity-0 bg-cover bg-center rounded-[30px] cursor-pointer ">
@@ -94,7 +94,7 @@ const Dashboardtab = () => {
 
         </div>
 
-        <div className='p-[20px] flex  flex-wrap  gap-[20px] ' >
+        <div className='p-[20px] flex   flex-wrap  gap-[20px] ' >
 
           {boxes.map((items) => (
 
@@ -115,7 +115,7 @@ const Dashboardtab = () => {
 
 
 
-          <div className=' w-full flex gap-[30px] p-[20px]  ' >
+          <div className=' w-full flex   gap-[30px] p-[20px]  ' >
 
             <LineChartComponent />
             <ExpenseBreakdown />

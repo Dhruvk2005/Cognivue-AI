@@ -10,7 +10,7 @@ const expenseData = [
 
 export default function ExpenseBreakdown() {
   return (
-    <div className="w-120 bg-white rounded-lg p-6 shadow-sm">
+    <div className="w-[50%] bg-white rounded-lg p-6 shadow-sm">
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
         <h3 className="text-lg font-semibold text-gray-900">Expense Breakdown</h3>
