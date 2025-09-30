@@ -90,7 +90,7 @@ const SideNav = (props: any) => {
             onClick={() => setShowNav(true)}
           >
             <Icon
-              className="absolute top-[64px] bg-[#0b0b0b] cursor-pointer"
+              className="absolute top-[47px] bg-[#0b0b0b] cursor-pointer"
               icon="line-md:menu-fold-right"
               width="30"
               height="30"
