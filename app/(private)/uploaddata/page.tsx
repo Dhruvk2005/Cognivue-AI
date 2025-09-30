@@ -27,7 +27,7 @@ const UploadData = () => {
             </div>
 
 
-            <div className="w-[100%] gap-[30px] flex justify-center mt-[30px]" >
+            <div className="w-[100%] p-[20px] flex-wrap gap-[30px] flex justify-center mt-[30px]" >
 
 
 
@@ -36,7 +36,7 @@ const UploadData = () => {
 
                     onDrop={handleDrop}
                     onDragOver={(e) => e.preventDefault()}
-                    className=" w-[60%]  border-2 border-dashed border-white/20 rounded-2xl  flex flex-col items-center justify-center 
+                    className=" w-[100%] p-[20px] md:[100%] lg:w-[60%]  border-2 border-dashed border-white/20 rounded-2xl  flex flex-col items-center justify-center 
         bg-white/5 backdrop-blur-md hover:bg-white/10 transition cursor-pointer"
                 >
                     <Icon className="mt-[10px]" icon="ep:upload-filled" width="28" height="28" style={{ color: "#fff" }} />
@@ -54,7 +54,7 @@ const UploadData = () => {
                 </div>
 
 
-                <div className=" w-[400px] bg-[white] p-[20px] rounded-2xl text-[black] " >
+                <div className=" w-[300px] sm:w-[400px] bg-[white] p-[20px] rounded-2xl text-[black] " >
                     <p className="font-bold text-[20px] " >Upload Instructions ~</p>
                     <ul className="flex flex-col gap-[5px]" >
 
