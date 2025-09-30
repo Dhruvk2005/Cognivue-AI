@@ -8,6 +8,7 @@ const transition:any = {
   ease: "linear",
 };
 
+
 export const GoogleGeminiEffect = ({
   pathLengths,
   title,

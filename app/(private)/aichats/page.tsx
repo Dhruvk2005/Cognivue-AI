@@ -5,8 +5,8 @@ import Orb from '../component/starbg'
 
 const AiChats = () => {
   return (
-    <div className='w-full select-none h-[690px] bg-[black] bg-gradient-to-br from-blue-900 via-gray-900 to-black'>
-      <div className='flex border-b-[1px]  p-[10px] items-center justify-between'>
+    <div className='w-full select-none min-h-screen bg-[black] bg-gradient-to-br from-blue-900 via-gray-900 to-black'>
+      <div className='flex border-b-[1px] flex-wrap p-[10px] items-center justify-between'>
 
         <div className='text-[18px] font-semibold '>
           Cognivue Chat
@@ -63,7 +63,7 @@ const AiChats = () => {
               placeholder="Ask me anything"
               onInput={(e) => {
                 const target = e.target as HTMLTextAreaElement;
-                target.style.height = "auto";
+                target.style.height = "auto"; 
                 target.style.height = target.scrollHeight + "px";
               }}
             />

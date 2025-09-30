@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 const Profile = () => {
     return (
-        <div className=' h-[690px] bg-gradient-to-br from-blue-900 via-gray-900 to-black'>
+        <div className='min-h-screen h-screen bg-gradient-to-br from-blue-900 via-gray-900 to-black'>
             <section>
                 <div className='flex border-b-[1px]  p-[10px] items-center justify-between'>
 
@@ -14,50 +14,47 @@ const Profile = () => {
                     <div className='flex items-center gap-[10px]'>
                         <div className='flex items-center bg-[white] text-[black] gap-[5px] p-[10px] rounded-[30px]'>
                             <Link
-                            href={"/signup"}
+                                href={"/signup"}
                             >
-                            <div className='text-[15px]' >
-                                Sign up
-                            </div>
+                                <div className='text-[15px]' >
+                                    Sign up
+                                </div>
                             </Link>
 
                         </div>
-                        
+
 
                         <div className='flex text-[15px]  gap-[5px] items-center  p-[10px] rounded-[30px]  bg-gradient-to-r from-blue-500 to-purple-600 text-[white]'>
                             <Link
-                            href={"/login"}
-                        
+                                href={"/login"}
+
                             >
-                            <div>
-                                Log in
-                            </div>
+                                <div>
+                                    Log in
+                                </div>
                             </Link>
 
                         </div>
                     </div>
                 </div>
 
-                <div className='p-[40px]  ' >
+                <div className=' w-[100%] p-[20px] mt-[40px]  md:p-[40px] md:mt-[0px] ' >
                     <h1 className='text-[50px]' >Profile</h1>
-                    <div className='<div className="
-  bg-white/5 
+                    <div className=' w-[100%] bg-white/5 
   backdrop-blur-md 
   border border-white/10 
   p-[20px] 
   flex flex-col justify-center 
-  w-[80%] 
+  md:w-[80%] 
   gap-[40px] 
-  rounded-xl
-">
-  {/* profile details here */}
-</div>
- p-[20px] flex flex-col justify-center w-[80%] gap-[40px]' >
+  rounded-xl' >
+
+
 
                         <div className='flex gap-[40px] items-center' >
 
 
-                            <div className=' w-[100px] h-[100px] rounded-[100%] bg-[white] ' >
+                            <div className='w-[80px] h-[80px] md:w-[100px] md:h-[100px] rounded-[100%] bg-[white] ' >
 
                             </div>
                             <div>
@@ -103,13 +100,13 @@ const Profile = () => {
 
                     </div>
 
-                </div>
+                </div >
 
 
 
-            </section>
+            </section >
 
-        </div>
+        </div >
     )
 }
 
