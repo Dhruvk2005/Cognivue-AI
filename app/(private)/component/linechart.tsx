@@ -23,7 +23,7 @@ const formatCurrency = (value: number) => {
 export default function RevenueGrowthChart() {
   return (
     <div className="w-[100%]  h-96 p-6 bg-[white] rounded-lg shadow-lg">
-      <h2 className="text-2xl font-bold text-gray-800 mb-4">Revenue Growth</h2>
+      <h2 className="text-2xl font-bold text-gray-800 ">Revenue Growth</h2>
       <ResponsiveContainer width="100%" height="100%">
         <LineChart data={revenueData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
           <CartesianGrid strokeDasharray="3 3" stroke="#e0e0e0" />

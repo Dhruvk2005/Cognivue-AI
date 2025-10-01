@@ -205,7 +205,7 @@ export default function Orb({
 
     function resize() {
       if (!container) return;
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const dpr = window.devicePixelRatio || 1;
       const width = container.clientWidth;
       const height = container.clientHeight;
       renderer.setSize(width * dpr, height * dpr);
@@ -244,34 +244,8 @@ export default function Orb({
       targetHover = 0;
     };
 
-    const handleTouchStart = (e: TouchEvent) => {
-      if (e.touches.length > 0) {
-        const touch = e.touches[0];
-        const rect = container.getBoundingClientRect();
-        const x = touch.clientX - rect.left;
-        const y = touch.clientY - rect.top;
-        const width = rect.width;
-        const height = rect.height;
-        const size = Math.min(width, height);
-        const centerX = width / 2;
-        const centerY = height / 2;
-        const uvX = ((x - centerX) / size) * 2.0;
-        const uvY = ((y - centerY) / size) * 2.0;
-
-        if (Math.sqrt(uvX * uvX + uvY * uvY) < 0.8) {
-          targetHover = 1;
-        }
-      }
-    };
-
-    const handleTouchEnd = () => {
-      targetHover = 0;
-    };
-
     container.addEventListener('mousemove', handleMouseMove);
     container.addEventListener('mouseleave', handleMouseLeave);
-    container.addEventListener('touchstart', handleTouchStart);
-    container.addEventListener('touchend', handleTouchEnd);
 
     let rafId: number;
     const update = (t: number) => {
@@ -299,8 +273,6 @@ export default function Orb({
       window.removeEventListener('resize', resize);
       container.removeEventListener('mousemove', handleMouseMove);
       container.removeEventListener('mouseleave', handleMouseLeave);
-      container.removeEventListener('touchstart', handleTouchStart);
-      container.removeEventListener('touchend', handleTouchEnd);
       container.removeChild(gl.canvas);
       gl.getExtension('WEBGL_lose_context')?.loseContext();
     };
