@@ -101,7 +101,7 @@ const Dashboardtab = () => {
 
 
 
-            <div key={index} className='w-full min-[500px]:w-[calc(50%-10px)] lg:w-[calc(25%-15px)] min-h-[130px] sm:min-h-[150px] bg-white/5 border-[1px] p-[15px] sm:p-[18px] text-[#475467] border-[#EAECF0] text-[white] text-[16px] sm:text-[18px] md:text-[20px] rounded-[10px] ' >
+            <div key={index} className='w-full min-[500px]:w-[calc(50%-10px)] lg:w-[calc(25%-15px)] min-h-[130px] sm:min-h-[150px] bg-white/5 border border-white/10 p-[15px] sm:p-[18px] text-[#475467]  text-[white] text-[16px] sm:text-[18px] md:text-[20px] rounded-[10px] ' >
               {items.title}
 
               <div className='text-[32px] sm:text-[36px] md:text-[40px] text-[white] font-semibold mt-[8px] sm:mt-[10px] ' >

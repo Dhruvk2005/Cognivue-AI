@@ -45,8 +45,8 @@ export default function ExpenseBreakdown() {
         <div className="flex flex-col gap-3">
           {expenseData.map((item, index) => (
             <div key={index} className="flex items-center gap-2">
-              <div 
-                className="w-3 h-3 rounded-full" 
+              <div
+                className="w-3 h-3 rounded-full"
                 style={{ backgroundColor: item.color }}
               />
               <span className="text-[20px] text-gray-700">{item.name}</span>
