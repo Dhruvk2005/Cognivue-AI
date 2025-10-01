@@ -6,9 +6,9 @@ const Profile = () => {
     return (
         <div className='min-h-screen h-screen bg-gradient-to-br from-blue-900 via-gray-900 to-black'>
             <section>
-                <div className='flex border-b-[1px]  p-[10px] items-center justify-between'>
+                <div className='flex border-b-[1px]  p-[15px] items-center justify-between'>
 
-                    <div className='text-[18px] font-semibold '>
+                    <div className='text-[white] font-semibold pl-[10px] sm:pl-[20px] text-[16px] sm:text-[18px] md:text-[20px]  '>
                         User Profile
                     </div>
                     <div className='flex items-center gap-[10px]'>

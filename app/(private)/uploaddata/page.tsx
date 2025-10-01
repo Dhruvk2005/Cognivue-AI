@@ -18,9 +18,9 @@ const UploadData = () => {
 
     return (
         <div className="w-full select-none min-h-screen bg-gradient-to-br from-blue-900 via-gray-900 to-black ">
-            <div className='flex border-b-[1px]  p-[20px] items-center justify-between'>
+            <div className='flex  border-b-1 border-white/40  p-[20px] items-center justify-between'>
 
-                <div className='text-[18px]  font-semibold '>
+                <div className='text-[white] font-semibold pl-[10px] sm:pl-[20px] text-[16px] sm:text-[18px] md:text-[20px]   '>
                     Upload Data
                 </div>
 

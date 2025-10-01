@@ -8,7 +8,7 @@ const AiChats = () => {
     <div className='w-full select-none min-h-screen bg-[black] bg-gradient-to-br from-blue-900 via-gray-900 to-black flex flex-col'>
       <div className='flex border-b-[1px] flex-wrap p-[10px] sm:p-[15px] items-center justify-between gap-[10px]'>
 
-        <div className='text-[16px] sm:text-[18px] md:text-[20px] font-semibold '>
+        <div className='text-[white] font-semibold pl-[10px] sm:pl-[20px] text-[16px] sm:text-[18px] md:text-[20px]  '>
           Cognivue Chat
         </div>
         <div className='flex items-center gap-[8px] sm:gap-[10px] flex-wrap'>
