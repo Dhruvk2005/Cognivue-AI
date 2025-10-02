@@ -132,7 +132,7 @@ hover:bg-white/10 hover:border-white/50
 
 
                 {/* {!effectDone &&( */}
-                <div className="relative w-full mt-[50px] sm:-mt-[200px]  z-10">
+                <div className="relative w-full -mt-[200px]  z-10">
                     <GoogleGeminiEffectDemo />
                 </div>
 

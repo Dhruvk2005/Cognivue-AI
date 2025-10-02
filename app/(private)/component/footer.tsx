@@ -2,6 +2,8 @@ import React from 'react'
 
 const Footer = () => {
     return (
+        <div>
+
         <div className='w-full min-h-screen flex-wrap bg-gradient-to-br from-blue via-gray-900 to-black flex items-center justify-between  border-[grey]      ' >
 
 
@@ -47,13 +49,25 @@ const Footer = () => {
                             <li className=' hover:text-[white] '>Cookie policy</li>
 
                         </ul>
+                        
                     </div>
                 </div>
+
+               
+
+               
             </div>
+            
+            
 
 
 
         </div>
+        <div className='text-[15px] p-[10px]  text-center ' >
+            Designed and developed by <b>Dhruv</b> 
+        </div>
+        </div>
+        
     )
 }
 
