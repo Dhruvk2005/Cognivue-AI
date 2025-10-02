@@ -131,11 +131,35 @@ hover:bg-white/10 hover:border-white/50
 
 
 
-{/* {!effectDone &&( */}
+                {/* {!effectDone &&( */}
                 <div className="relative w-full -mt-[200px] z-10">
                     <GoogleGeminiEffectDemo />
                 </div>
-{/* )} */}
+
+                <div className="relative w-full bg-gradient-to-br from-gray-900 via-black to-blue z-10">
+                    <div className="flex flex-col items-center justify-center h-[900px] md:h-[700px] py-20 px-4">
+                        <h2 className=" text-center mt-[100px] md:mt-[0px] text-4xl md:text-5xl font-bold text-white mb-6">Powerful AI Insights</h2>
+                        <p className="text-xl text-gray-300 max-w-2xl text-center mb-12">
+                            Transform your business data into actionable insights with our advanced AI analytics
+                        </p>
+
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl">
+                            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20">
+                                <h3 className="text-2xl font-semibold text-white mb-3">Real-time Analytics</h3>
+                                <p className="text-gray-300">Get instant insights from your data as it flows in</p>
+                            </div>
+                            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20">
+                                <h3 className="text-2xl font-semibold text-white mb-3">Predictive Models</h3>
+                                <p className="text-gray-300">Forecast trends and make data-driven decisions</p>
+                            </div>
+                            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20">
+                                <h3 className="text-2xl font-semibold text-white mb-3">Smart Automation</h3>
+                                <p className="text-gray-300">Automate workflows with intelligent AI assistance</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {/* )} */}
             </div>
 
 

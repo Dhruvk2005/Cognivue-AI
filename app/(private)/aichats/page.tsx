@@ -6,7 +6,7 @@ import Orb from '../component/starbg'
 const AiChats = () => {
   return (
     <div className='w-full select-none min-h-screen bg-[black] bg-gradient-to-br from-blue-900 via-gray-900 to-black flex flex-col'>
-      <div className='flex border-b-[1px] flex-wrap p-[10px] sm:p-[15px] items-center justify-between gap-[10px]'>
+      <div className='flex  border-b-1 border-white/40  flex-wrap p-[10px] sm:p-[15px] items-center justify-between gap-[10px]'>
 
         <div className='text-[white] font-semibold pl-[10px] sm:pl-[20px] text-[16px] sm:text-[18px] md:text-[20px]  '>
           Cognivue Chat
