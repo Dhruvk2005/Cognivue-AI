@@ -22,11 +22,21 @@ const Login = () => {
         try {
             let res = await LoginApi(loginUser)
             console.log("User Login successfully: ", res)
-            router.push("/dashboard")
+            if(res.status == 200 && res.token){
+                localStorage.setItem("token",res.token)
+                if(res.data.name) localStorage.setItem("username",res.data.name);
+                if(res.data.email) localStorage.setItem("email",res.data.email)
+
+                    router.push("/dashboard")
+            }else{
+                alert(res.mssg)
+            }
             
+
 
         } catch (err) {
             console.log("User does not logged In", err)
+            alert("Something went wrong. Please try again.");
 
         }
 
@@ -86,13 +96,13 @@ const Login = () => {
                                     </label>
                                     <input className="border-[grey] w-full border-[1px] rounded-[8px] p-[10px]  " name="password" onChange={handleChange} type="password" placeholder="Enter your Password" />
                                 </div>
-                         
 
 
-                            <div>
-                                <button className="bg-[#002D72] w-full p-[10px] rounded-[8px] font-semibold  mt-[10px]  hover:cursor-pointer hover:bg-[#012761]  " >Submit</button>
-                            </div>
-                               </form>
+
+                                <div>
+                                    <button className="bg-[#002D72] w-full p-[10px] rounded-[8px] font-semibold  mt-[10px]  hover:cursor-pointer hover:bg-[#012761]  " >Submit</button>
+                                </div>
+                            </form>
 
 
 

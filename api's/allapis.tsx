@@ -15,11 +15,11 @@ export const SignUp = async (data: any) => {
             headers: {
                 "content-type": "application/json "
             },
-             
+
         })
-      localStorage.setItem("username", res.data.name)
-      localStorage.setItem("email", res.data.email)
-    
+        localStorage.setItem("username", res.data.name)
+        localStorage.setItem("email", res.data.email)
+
         return res.data
 
     } catch (err) {
@@ -28,21 +28,25 @@ export const SignUp = async (data: any) => {
 }
 
 
-export const LoginApi = async(data:any)=>{
-    try{
-        let res  = await axios({
-            method:"post",
-            url:`http://localhost:5000/api/auth/login`,
-            data:data,
-            headers:{
-                "content-type" : "application/json"
+export const LoginApi = async (data: any) => {
+    try {
+        let res = await axios({
+            method: "post",
+            url: `http://localhost:5000/api/auth/login`,
+            data: data,
+            headers: {
+                "content-type": "application/json"
             }
         })
-        
+
+
+        localStorage.setItem("token", res.data.token);
+        localStorage.setItem("username", res.data.name);
+        localStorage.setItem("email", res.data.email);
 
         return res.data
-        
-    }catch(err){
+
+    } catch (err) {
         console.log(err)
 
     }
