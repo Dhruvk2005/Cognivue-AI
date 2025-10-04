@@ -3,6 +3,7 @@ import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { SignUp } from "@/api's/allapis"
 import React, { FormEvent, useState } from "react"
+import Loading from "@/app/(private)/component/loading"
 const Signup = () => {
 
 
@@ -17,6 +18,7 @@ const Signup = () => {
 
     const [user, setUser] = useState(userData())
     const [ loading, setLoading] = useState(false)
+    
 
     const handleChange = (e: any) => {
         setUser({ ...user, [e.target.name]: e.target.value })
@@ -24,19 +26,27 @@ const Signup = () => {
 
     const handleSubmitUser = async(e: React.FormEvent)=>{
         e.preventDefault()
+        
           setLoading(true)
         try{
              const res = await SignUp(user)
              console.log("User Data: ",res)
-             router.push("/login")
+             setTimeout(()=>{
+
+                 router.push("/login")
+                 setLoading(false)
+             },1500)
 
         }catch(err){
             console.log("Error during signup:", err)
-        }finally{
             setLoading(false)
         }
        
        
+    }
+
+    if(loading){
+        return <Loading/>
     }
 
 

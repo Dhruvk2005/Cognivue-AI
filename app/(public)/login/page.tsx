@@ -3,6 +3,7 @@ import Link from "next/link"
 import { useState } from "react"
 import { LoginApi } from "@/api's/allapis"
 import { useRouter } from "next/navigation"
+import Loading from "@/app/(private)/component/loading"
 const Login = () => {
 
     const router = useRouter()
@@ -12,6 +13,8 @@ const Login = () => {
         password: ""
     })
 
+    const [loading, setLoading] = useState(false)
+
 
     const handleChange = (e: any) => {
         setLoginUser({ ...loginUser, [e.target.name]: e.target.value })
@@ -19,6 +22,7 @@ const Login = () => {
 
     const hadleLoginUser = async (e: React.FormEvent) => {
         e.preventDefault()
+        setLoading(true)
         try {
             let res = await LoginApi(loginUser)
             console.log("User Login successfully: ", res)
@@ -27,9 +31,16 @@ const Login = () => {
                 if(res.data.name) localStorage.setItem("username",res.data.name);
                 if(res.data.email) localStorage.setItem("email",res.data.email)
 
-                    router.push("/dashboard")
+                    setTimeout(()=>{
+                        setLoading(false)
+                        router.push("/dashboard")
+
+                    },1500)
+                    
+
             }else{
                 alert(res.mssg)
+                setLoading(false)
             }
             
 
@@ -37,10 +48,17 @@ const Login = () => {
         } catch (err) {
             console.log("User does not logged In", err)
             alert("Something went wrong. Please try again.");
+            setLoading(false)
 
         }
 
+       
+
     }
+
+     if(loading){
+            return <Loading/>
+        }
 
     return (
         <div className="w-full min-h-screen flex p-[10px] justify-center items-center bg-[url('/bg.jpg')] bg-cover bg-center bg-no-repeat lg:p-[0px] ">

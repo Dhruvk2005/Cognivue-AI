@@ -1,10 +1,45 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 import { Icon } from '@iconify/react/dist/iconify.js'
 import Link from 'next/link'
+import { useEffect } from 'react'
+import Loading from '../component/loading'
+import { useRouter } from 'next/navigation'
 
 const Profile = () => {
+
+    const [name, setName] = useState<any>("")
+    const [email, setEmail] = useState<any>("")
+    const [loading, setLoading] = useState(false)
+
+    const router = useRouter()
+
+
+    useEffect(() => {
+        const storedName = localStorage.getItem("username")
+        const storedEmail = localStorage.getItem("email")
+        setName(storedName)
+        setEmail(storedEmail)
+
+    })
+
+
+    const handleLoginClick = () => {
+        setLoading(true)
+        setTimeout(() => {
+            router.push("/login")
+            setLoading(false)
+
+        }, 2000)
+    }
+
+    if (loading) {
+        return <Loading />
+    }
+
+
     return (
-        <div className='min-h-screen h-screen bg-gradient-to-br from-blue-900 via-gray-900 to-black'>
+        <div className='min-h-screen select-none h-screen bg-gradient-to-br from-blue-900 via-gray-900 to-black'>
             <section>
                 <div className='flex  border-b-1 border-white/40  p-[15px] items-center justify-between'>
 
@@ -24,15 +59,11 @@ const Profile = () => {
                         </div>
 
 
-                        <div className='flex text-[15px]  gap-[5px] items-center  p-[10px] rounded-[30px]  bg-gradient-to-r from-blue-500 to-purple-600 text-[white]'>
-                            <Link
-                                href={"/login"}
-
-                            >
-                                <div>
+                        <div onClick={handleLoginClick} className='flex text-[15px]  gap-[5px] items-center  p-[10px] rounded-[30px]  bg-gradient-to-r from-blue-500 to-purple-600 text-[white]'>
+                           
+                                
                                     Log in
-                                </div>
-                            </Link>
+                           
 
                         </div>
                     </div>
@@ -58,8 +89,8 @@ const Profile = () => {
 
                             </div>
                             <div>
-                                <ul><li className='text-[30px]  ' >Dhruv</li>
-                                    <li className='text-[grey]' >Dhruv@gmail.com</li></ul>
+                                <ul><li className='text-[30px]  ' >{name}</li>
+                                    <li className='text-[grey]' >{email}</li></ul>
                             </div>
                         </div>
 
@@ -68,7 +99,7 @@ const Profile = () => {
                                 <li className='flex flex-col gap-[10px]' >
                                     <label htmlFor="text">Full Name</label>
                                     <div className='border-[grey] p-[10px] border-[1px] ' >
-                                        Dhruv
+                                        {name}
 
                                     </div>
 
@@ -84,7 +115,7 @@ const Profile = () => {
                                 <li className='flex flex-col gap-[10px]' >
                                     <label htmlFor="email">Email</label>
                                     <div className='border-[grey] p-[10px] border-[1px] ' >
-                                        Dhruv@gmail.com
+                                        {email}
 
                                     </div>
 

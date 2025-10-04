@@ -8,6 +8,8 @@ import { MarqueeDemo } from "./marqueedemmo";
 import { FloatingDockDemo } from "./dock";
 import { GoogleGeminiEffectDemo } from "./hero";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import { useRouter } from "next/navigation";
+import Loading from "./loading";
 
 export default function AnimatedAuroraBackground() {
     const stars = useMemo(() => {
@@ -28,7 +30,10 @@ export default function AnimatedAuroraBackground() {
     }, []);
 
 
+    const router = useRouter()
+
     const [show, setShow] = useState(false)
+    const [loading, setLoading] = useState(false)
     // const [effectDone, setEffectDone] = useState(false)
 
 
@@ -44,6 +49,17 @@ export default function AnimatedAuroraBackground() {
     }, [])
 
 
+    const handleGetClick = () => {
+        setLoading(true)
+
+        setTimeout(() => {
+            router.push("/signup")
+            setLoading(false)
+        }, 1000)
+
+    }
+
+
     // useEffect(()=>{
     //     if(!effectDone){
     //         document.body.style.overflow = "hidden"
@@ -52,6 +68,11 @@ export default function AnimatedAuroraBackground() {
     //     }
 
     // },[effectDone])
+
+
+    if (loading) {
+        return <Loading />
+    }
 
     return (
         <div className='relative w-full min-h-screen'>
@@ -64,18 +85,18 @@ export default function AnimatedAuroraBackground() {
 
                     <div className="flex items-center gap-[20px]">
                         <FloatingDockDemo />
-                        <Link href={"/signup"} >
-                            <div>
 
-                                <button className=" w-[150px] px-10 py-3 bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-400
+                        <div>
+
+                            <button onClick={handleGetClick} className=" w-[150px] px-10 py-3 bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-400
 text-white
 hover:scale-105 hover:shadow-lg text-white font-semibold rounded-full shadow-md 
                        hover:bg-[#1f1c82] hover:scale-105 hover:shadow-lg 
                        transition-all duration-200 ease-in-out hover:cursor-pointer">
-                                    Sign Up
-                                </button>
-                            </div>
-                        </Link>
+                                Sign Up
+                            </button>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -106,12 +127,12 @@ hover:scale-105 hover:shadow-lg text-white font-semibold rounded-full shadow-md
                         </div>
                     </div> */}
 
-                        <Link className=" p-[10px] flex justify-center bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-400
+                        <div onClick={handleGetClick} className=" p-[10px] flex justify-center bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-400
 text-white
-hover:scale-105 hover:shadow-lg" href={"/signup"} >
+hover:scale-105 hover:shadow-lg">
 
                             <button  >Get Started</button>
-                        </Link>
+                        </div>
 
                         <button className="p-[10px] bg-transparent border border-white/30 text-white
 hover:bg-white/10 hover:border-white/50
