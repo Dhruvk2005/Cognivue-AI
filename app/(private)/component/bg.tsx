@@ -127,7 +127,7 @@ hover:scale-105 hover:shadow-lg text-white font-semibold rounded-full shadow-md
                         </div>
                     </div> */}
 
-                        <div onClick={handleGetClick} className=" p-[10px] flex justify-center bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-400
+                        <div onClick={handleGetClick} className=" p-[10px] hover:cursor-pointer flex justify-center bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-400
 text-white
 hover:scale-105 hover:shadow-lg">
 
@@ -135,7 +135,7 @@ hover:scale-105 hover:shadow-lg">
                         </div>
 
                         <button className="p-[10px] bg-transparent border border-white/30 text-white
-hover:bg-white/10 hover:border-white/50
+hover:bg-white/10 hover:border-white/50 hover:cursor-pointer
 " >Learn More</button>
                     </div>
 
