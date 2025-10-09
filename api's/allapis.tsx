@@ -3,14 +3,14 @@ import React from "react";
 
 
 
-const Cognivue_url = process.env.COG
+const Cognivue_url = process.env.COGNIVUE_URL
 
 
 export const SignUp = async (data: any) => {
     try {
         let res = await axios({
             method: "post",
-            url: `https://cognivue-ai-backend.vercel.app/api/auth/signup`,
+            url: `https://cognivue-ai-backend.onrender.com/api/auth/signup`,
             data: data,
             headers: {
                 "content-type": "application/json "
@@ -32,7 +32,7 @@ export const LoginApi = async (data: any) => {
     try {
         let res = await axios({
             method: "post",
-            url: `https://cognivue-ai-backend.vercel.app/api/auth/login`,
+            url: `https://cognivue-ai-backend.onrender.com/api/auth/login`,
             data: data,
             headers: {
                 "content-type": "application/json"
@@ -61,7 +61,7 @@ export const upload = async (file: any) => {
         formData.append("file", file)
 
         const res = await axios.post(
-            `https://cognivue-ai-backend.vercel.app/api/upload`,
+            `https://cognivue-ai-backend.onrender.com/api/upload`,
             formData,
             {
                 headers: {
