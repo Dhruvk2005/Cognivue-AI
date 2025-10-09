@@ -1,9 +1,11 @@
 "use client";
 import React, { useState } from "react";
 import { Icon } from "@iconify/react";
+import { upload } from "@/api's/allapis";
 
 const UploadData = () => {
     const [files, setFiles] = useState<any>([]);
+    const [uploading, setUploading] = useState(false)
 
     const handleFileUpload = (e: any) => {
         const uploaded = Array.from(e.target.files)
@@ -15,6 +17,18 @@ const UploadData = () => {
         const dropped = Array.from(e.dataTransfer.files);
         setFiles([...files, ...dropped]);
     };
+
+
+    const handleUploadToServer = async () => {
+        setUploading(true)
+        if (files.length === 0) {
+            return alert("Please select file")
+        }
+
+        const response = await upload(files[0])
+        setUploading(false)
+        console.log("server response: ", response)
+    }
 
     return (
         <div className="w-full select-none min-h-screen bg-gradient-to-br from-blue-900 via-gray-900 to-black ">
@@ -58,9 +72,9 @@ const UploadData = () => {
                     <p className="font-bold text-[20px] " >Upload Instructions ~</p>
                     <ul className="flex flex-col gap-[5px]" >
 
-                        <li className="flex items-center " ><Icon icon="bi:dot" width="16" height="16"  style={{color: "#000"}} />Drag & drop files, or click to browse.</li>
-                        <li className="flex items-center" ><Icon icon="bi:dot" width="16" height="16"  style={{color: "#000"}} />Supported formats: CSV, XLSX, JSON, TXT.</li>
-                        <li className="flex items-center" ><Icon icon="bi:dot" width="16" height="16"  style={{color: "#000"}} />Maximum size: e.g., 50 MB per file.</li>
+                        <li className="flex items-center " ><Icon icon="bi:dot" width="16" height="16" style={{ color: "#000" }} />Drag & drop files, or click to browse.</li>
+                        <li className="flex items-center" ><Icon icon="bi:dot" width="16" height="16" style={{ color: "#000" }} />Supported formats: CSV, XLSX, JSON, TXT.</li>
+                        <li className="flex items-center" ><Icon icon="bi:dot" width="16" height="16" style={{ color: "#000" }} />Maximum size: e.g., 50 MB per file.</li>
                         <li className="" ><b>Security note: </b>
 
                             “Your data is encrypted and processed securely. We never share it with third parties.”</li>
@@ -87,8 +101,24 @@ const UploadData = () => {
                             </li>
                         ))}
                     </ul>
+
+                    <div>
+                        <button
+                            onClick={handleUploadToServer}
+                           
+                            className={`mt-[20px]   px-6 py-2 rounded-lg text-white font-semibold transition ${uploading
+                                ? "bg-gray-600 cursor-not-allowed"
+                                : "bg-gradient-to-r from-blue-500 to-purple-600 hover:opacity-90"
+                                }`}
+                        >
+                            {uploading ? "Uploading..." : "Upload to Server"}
+                        </button>
+
+                    </div>
                 </div>
             )}
+
+
         </div>
     );
 };

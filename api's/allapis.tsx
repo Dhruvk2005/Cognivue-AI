@@ -10,7 +10,7 @@ export const SignUp = async (data: any) => {
     try {
         let res = await axios({
             method: "post",
-            url: `http://localhost:5000/api/auth/signup`,
+            url: `https://cognivue-ai-backend.vercel.app/api/auth/signup`,
             data: data,
             headers: {
                 "content-type": "application/json "
@@ -32,7 +32,7 @@ export const LoginApi = async (data: any) => {
     try {
         let res = await axios({
             method: "post",
-            url: `http://localhost:5000/api/auth/login`,
+            url: `https://cognivue-ai-backend.vercel.app/api/auth/login`,
             data: data,
             headers: {
                 "content-type": "application/json"
@@ -55,3 +55,23 @@ export const LoginApi = async (data: any) => {
 
 
 
+export const upload = async (file: any) => {
+    try {
+        const formData = new FormData();
+        formData.append("file", file)
+
+        const res = await axios.post(
+            `https://cognivue-ai-backend.vercel.app/api/upload`,
+            formData,
+            {
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                },
+            }
+        );
+        console.log("File uploaded", res.data)
+        return res.data
+    } catch (err) {
+        console.log(err)
+    }
+}
