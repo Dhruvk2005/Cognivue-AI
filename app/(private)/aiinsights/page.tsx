@@ -5,6 +5,9 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import Loading from '../component/loading'
 import { fetchUpload } from '@/api\'s/allapis'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
+import { PluggableList } from 'unified'
 
 const AiInsights = () => {
   const [uploads, setUploads] = useState<any>([])
@@ -27,7 +30,7 @@ const AiInsights = () => {
   return (
     <div className='min-h-screen select-none h-screen bg-gradient-to-br from-blue-900 via-gray-900 to-black'>
       <section>
-        {/* Header */}
+
         <div className='flex border-b border-white/40 p-4 items-center justify-between'>
           <div className='text-white font-semibold text-[18px] sm:text-[20px] md:text-[22px] pl-2 sm:pl-4'>
             AI Insights
@@ -49,7 +52,7 @@ const AiInsights = () => {
           </div>
         </div>
 
-        {/* Insights list */}
+
         <div className='w-full p-4 md:p-10'>
           <h1 className='text-white text-4xl mb-6'>Uploaded Insights</h1>
 
@@ -57,7 +60,7 @@ const AiInsights = () => {
             {uploads.length === 0 ? (
               <div className='text-white/70'>No uploads found.</div>
             ) : (
-              uploads.map((item:any, index:number) => (
+              uploads.map((item: any, index: number) => (
                 <div
                   key={item._id || index}
                   className='w-full bg-white/5 backdrop-blur-md border border-white/10 p-5 rounded-xl flex flex-col gap-4'
@@ -83,9 +86,37 @@ const AiInsights = () => {
 
                   <div>
                     <h3 className='text-white font-semibold text-lg mb-2'>AI Insights</h3>
-                    <p className='text-white/80 text-sm'>
-                      {item.aiInsights || 'No insights available.'}
-                    </p>
+                    {item.aiInsights ? (
+                      <ReactMarkdown
+                        remarkPlugins={[remarkGfm] as PluggableList}
+                        components={{
+                          h3: ({ node, ...props }) => (
+                            <h3
+                              className="text-lg font-semibold mt-3 mb-2 text-blue-400"
+                              {...props}
+                            />
+                          ),
+                          ul: ({ node, ...props }) => (
+                            <ul className="list-disc list-inside space-y-1 ml-4" {...props} />
+                          ),
+                          li: ({ node, ...props }) => <li className="mb-1" {...props} />,
+                          strong: ({ node, ...props }) => (
+                            <strong className="font-semibold text-blue-300" {...props} />
+                          ),
+                          code: ({ node, ...props }) => (
+                            <code className="bg-gray-800 px-1 rounded text-sm" {...props} />
+                          ),
+                          p: ({ node, ...props }) => (
+                            <p className="text-white/80 text-sm mb-2 leading-relaxed" {...props} />
+                          ),
+                          hr: () => <hr className="my-4 border-t border-gray-700" />,
+                        }}
+                      >
+                        {item.aiInsights}
+                      </ReactMarkdown>
+                    ) : (
+                      <p className='text-white/80 text-sm'>No insights available.</p>
+                    )}
                   </div>
                 </div>
               ))
