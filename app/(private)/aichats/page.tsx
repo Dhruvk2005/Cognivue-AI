@@ -61,8 +61,8 @@ const AiChats = () => {
             <div
               key={idx}
               className={`max-w-[80%] p-[10px] rounded-[10px] ${msg.role === "user"
-                  ? "bg-blue-600 text-white self-end"
-                  : "bg-gray-800 text-white self-start"
+                ? "bg-blue-600 text-white self-end"
+                : "bg-gray-800 text-white self-start"
                 }`}
             >
               {msg.role === "ai" ? (
