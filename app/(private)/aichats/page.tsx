@@ -3,6 +3,9 @@ import React, { useState, useRef } from 'react'
 import { Icon } from '@iconify/react/dist/iconify.js'
 import Orb from '../component/starbg'
 import { aiInsights } from "@/api's/allapis"
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+
 
 
 const AiChats = () => {
@@ -53,14 +56,43 @@ const AiChats = () => {
 
         {/* Chat Container */}
         <div className="relative z-10 flex-1 overflow-y-auto px-[10px] sm:px-[20px] py-[10px] flex flex-col gap-[10px]">
-          {messages.map((msg, idx) => (
-            <div key={idx} className={`max-w-[80%] p-[10px] rounded-[10px] ${msg.role === 'user' ? 'bg-blue-600 text-white self-end' : 'bg-gray-800 text-white self-start'}`}>
-              {msg.text}
-            </div>
-          ))}
+         {messages.map((msg, idx) => (
+  <div
+    key={idx}
+    className={`max-w-[80%] p-[10px] rounded-[10px] ${
+      msg.role === "user"
+        ? "bg-blue-600 text-white self-end"
+        : "bg-gray-800 text-white self-start"
+    }`}
+  >
+    {msg.role === "ai" ? (
+      <ReactMarkdown
+        remarkPlugins={[remarkGfm]}
+        className="prose prose-invert max-w-none"
+        components={{
+          h3: ({ node, ...props }) => (
+            <h3 className="text-lg font-semibold mt-3 mb-2 text-blue-400" {...props} />
+          ),
+          ul: ({ node, ...props }) => (
+            <ul className="list-disc list-inside space-y-1 ml-4" {...props} />
+          ),
+          li: ({ node, ...props }) => <li className="mb-1" {...props} />,
+          strong: ({ node, ...props }) => (
+            <strong className="font-semibold text-blue-300" {...props} />
+          ),
+        }}
+      >
+        {msg.text}
+      </ReactMarkdown>
+    ) : (
+      <div>{msg.text}</div>
+    )}
+  </div>
+))}
+
           {loading && (
             <div className="max-w-[80%] p-[10px] rounded-[10px] bg-gray-700 text-white self-start animate-pulse">
-              AI is typing...
+             Processing...
             </div>
           )}
         </div>
