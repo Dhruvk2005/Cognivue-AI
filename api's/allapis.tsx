@@ -75,3 +75,27 @@ export const upload = async (file: any) => {
         console.log(err)
     }
 }
+
+
+export const aiInsights = async (data: any) => {
+    try {
+        const res = await axios.post(
+
+            `https://cognivue-ai-backend.onrender.com/api/ai/analyze`,
+            { data },
+            {
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+            }
+
+        )
+        return res.data
+
+    } catch (err) {
+        console.error("AI Insights Error:", err);
+        return null;
+
+    }
+}
