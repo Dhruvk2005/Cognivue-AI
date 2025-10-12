@@ -103,7 +103,7 @@ export const aiInsights = async (data: any) => {
 
 export const fetchUpload = async () => {
     try {
-        const res = await axios.get("https://cognivue-ai-backend.onrender.com/api/upload/");
+        const res = await axios.get("https://cognivue-ai-backend.onrender.com/api/upload/fetchUploads");
         console.log("Fetched data: ", res.data);
         return res.data;
     } catch (err) {
