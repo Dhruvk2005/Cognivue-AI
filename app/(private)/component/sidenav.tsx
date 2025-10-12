@@ -2,8 +2,11 @@
 import React, { useState, useEffect } from 'react'
 import { Icon } from '@iconify/react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'  // 👈 import this
 
 const SideNav = (props: any) => {
+  const pathname = usePathname() // 👈 get current route
+
   const options: any = [
     { title: "Dashboard", icon: <Icon icon="tabler:home-filled" width="24" height="27" style={{ color: "#fff" }} />, href: '/dashboard' },
     { title: 'Upload Data', icon: <Icon icon="iconoir:upload-data-window" width="24" height="27" style={{ color: "#fff" }} />, href: '/uploaddata' },
@@ -14,18 +17,12 @@ const SideNav = (props: any) => {
 
   const [showNav, setShowNav] = useState(false)
 
-  // Disable body scroll when sidebar is open (mobile only)
   useEffect(() => {
-    if (showNav) {
-      document.body.style.overflow = "hidden"
-    } else {
-      document.body.style.overflow = ""
-    }
+    document.body.style.overflow = showNav ? 'hidden' : ''
   }, [showNav])
 
   return (
     <div className="flex select-none">
-
       
       {showNav && (
         <div
@@ -34,7 +31,6 @@ const SideNav = (props: any) => {
         />
       )}
 
-    
       <div
         className={`
           bg-[#0b0b0b] flex flex-col transition-transform duration-300
@@ -43,11 +39,10 @@ const SideNav = (props: any) => {
           lg:translate-x-0
         `}
       >
-        
         <div className="w-full flex justify-between items-center p-[20px] flex-shrink-0">
           <img className="w-[180px]" src="./logo1.png" alt="Logo" />
           <Icon
-            className="cursor-pointer lg:hidden -mt-[25px] "
+            className="cursor-pointer lg:hidden -mt-[25px]"
             onClick={() => setShowNav(false)}
             icon="line-md:menu-fold-left"
             width="24"
@@ -56,34 +51,41 @@ const SideNav = (props: any) => {
           />
         </div>
 
-        
         <div className="flex-1 overflow-y-auto pl-[22px] mt-[20px]">
           <ul className="flex flex-col gap-[20px] pb-[40px]">
-            {options.map((items: any, index: number) => (
-              <Link
-                href={items.href}
-                key={index}
-                onClick={() => setShowNav(false)} 
-              >
-                <li className="flex w-[270px] p-[10px] gap-[10px] transition-all rounded-[5px] hover:ml-[8px] hover:bg-white/10 hover:text-white hover:bg-opacity-40 hover:cursor-pointer hover:border-l-[5px]">
-                  {items.icon}
-                  <span className="text-[20px] text-white">{items.title}</span>
-                </li>
-              </Link>
-            ))}
+            {options.map((item: any, index: number) => {
+              const isActive = pathname === item.href // 👈 check if current route matches
+              return (
+                <Link
+                  href={item.href}
+                  key={index}
+                  onClick={() => setShowNav(false)}
+                >
+                  <li
+                    className={`flex w-[270px] p-[10px] gap-[10px] rounded-[5px] transition-all 
+                    hover:ml-[8px] hover:bg-white/10 hover:cursor-pointer hover:border-l-[5px]
+                    ${isActive
+                      ? "bg-white/10 border-l-[5px] border-[#00bfff]" // 👈 active style
+                      : "border-l-[5px] border-transparent"
+                    }`}
+                  >
+                    {item.icon}
+                    <span className="text-[20px] text-white">{item.title}</span>
+                  </li>
+                </Link>
+              )
+            })}
           </ul>
         </div>
       </div>
 
-      
       <div
         className={`
           flex-1 transition-all duration-300
           ${showNav ? "ml-0" : "ml-0"} 
-          lg:ml-[300px]  /* Push content on desktop */
+          lg:ml-[300px]
         `}
       >
-        {/* Open button (mobile only) */}
         {!showNav && (
           <div
             className="cursor-pointer lg:hidden"
