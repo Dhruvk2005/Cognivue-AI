@@ -46,7 +46,7 @@ const Dashboardtab = () => {
 
 
           <div className='flex flex-wrap  items-center gap-[15px] sm:gap-[20px] md:gap-[30px]   '  >
-            <Icon  icon="basil:notification-solid" width="24" height="24" className='  cursor-pointer  w-[24px] h-[24px] sm:w-[26px] sm:h-[26px] md:w-[28px] md:h-[28px]' style={{ color: "#ffffffff" }} />
+            <Icon icon="basil:notification-solid" width="24" height="24" className='  cursor-pointer  w-[24px] h-[24px] sm:w-[26px] sm:h-[26px] md:w-[28px] md:h-[28px]' style={{ color: "#ffffffff" }} />
 
             <div className="flex items-center gap-[8px] sm:gap-[10px] mr-[10px] sm:mr-[20px] bg-gradient-to-r p-[8px] sm:p-[10px]  bg-gradient-to-r from-blue-500 to-purple-600 text-[white] bg-opacity-0 bg-cover bg-center rounded-[30px] cursor-pointer ">
 
@@ -118,12 +118,12 @@ const Dashboardtab = () => {
 
           <div className=' w-full flex flex-col lg:flex-row gap-[20px] sm:gap-[25px] md:gap-[30px] p-[15px] sm:p-[20px]  ' >
 
-          
-              <LineChartComponent />
-           
-           
-              <ExpenseBreakdown />
-       
+
+            <LineChartComponent />
+
+
+            <ExpenseBreakdown />
+
 
 
           </div>
