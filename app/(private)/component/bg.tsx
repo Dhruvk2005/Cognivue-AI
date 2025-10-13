@@ -80,7 +80,7 @@ export default function AnimatedAuroraBackground() {
             <div className='fixed top-0 left-0 right-0 w-full z-50 bg-black/20 backdrop-blur-sm'>
                 <div className='flex items-center justify-between w-full p-[20px]'>
                     <div className='  sm:text-[20px] text-white '>
-                        Cognivue AI
+                        CROOSE AI
                     </div>
 
                     <div className="flex items-center gap-[20px]">
