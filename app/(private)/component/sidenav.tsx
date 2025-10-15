@@ -40,8 +40,8 @@ const SideNav = (props: any) => {
         `}
       >
         <div className="w-full flex justify-between items-center p-[20px] flex-shrink-0">
-          {/* <img className="w-[180px]" src="./logo1.png" alt="Logo" /> */}
-          <h2 className='p-[10px] text-[25px] font-semibold ' >CROOSE AI</h2>
+          <img className="w-[180px]" src="./logo1.png" alt="Logo" />
+          {/* <h2 className='p-[10px] text-[25px] font-semibold ' >CROOSE AI</h2> */}
           <Icon
             className="cursor-pointer lg:hidden -mt-[25px]"
             onClick={() => setShowNav(false)}
