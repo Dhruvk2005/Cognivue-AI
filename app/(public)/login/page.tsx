@@ -35,7 +35,7 @@ const Login = () => {
                         setLoading(false)
                         router.push("/dashboard")
 
-                    },1500)
+                    },1000)
                     
 
             }else{
