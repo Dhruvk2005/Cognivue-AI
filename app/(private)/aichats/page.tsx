@@ -43,23 +43,37 @@ const AiChats = () => {
 
   return (
     <div className='w-full select-none min-h-screen bg-[black] bg-gradient-to-br from-blue-900 via-gray-900 to-black flex flex-col relative'>
-    
+
       {/* Background Orb */}
       <div className='absolute inset-0 w-full h-full'>
         <Orb hoverIntensity={0.5} rotateOnHover={true} hue={0} forceHoverState={false} />
       </div>
 
       {/* Header */}
-      <div className='flex items-center justify-between p-4 sm:p-6 border-b border-white/20 z-10 relative'>
-      <div>
+     <div className='flex  border-b-1 border-white/40  flex-wrap p-[10px] sm:p-[15px] items-center justify-between gap-[10px]'>
 
-        <h1 className='text-white font-semibold text-[18px] sm:text-[20px] md:text-[22px] pl-2 sm:pl-4'>Cognivue AI Chat</h1>
+        <div className='text-[white] font-semibold pl-[10px] sm:pl-[20px] text-[16px] sm:text-[18px] md:text-[20px]  '>
+          Cognivue Chat
+        </div>
+        <div className='flex items-center gap-[8px] sm:gap-[10px] flex-wrap'>
+          <div className='flex items-center bg-[white] text-[black] gap-[5px] p-[8px] sm:p-[10px] rounded-[30px] cursor-pointer hover:opacity-90 transition-opacity'>
+            <div className='text-[12px] sm:text-[14px] md:text-[15px]' >
+              Share
+            </div>
+            <div>
+              <Icon icon="lucide:share" width="14" height="14" className='sm:w-[15px] sm:h-[15px]' style={{ color: "#000000ff" }} />
+            </div>
+          </div>
 
-      </div>
-
-      <div className='bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm cursor-pointer'  >
-        New Chat
-      </div>
+          <div className='flex text-[12px] sm:text-[14px] md:text-[15px] gap-[5px] items-center bg-gradient-to-r p-[8px] sm:p-[10px] rounded-[30px] from-blue-500 to-purple-600 text-[white] cursor-pointer hover:opacity-90 transition-opacity'>
+            <div>
+              New Chat
+            </div>
+            <div>
+              <Icon icon="ri:chat-ai-fill" width="14" height="14" className='sm:w-[15px] sm:h-[15px]' style={{ color: "#fff" }} />
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Chat Messages */}
@@ -68,10 +82,10 @@ const AiChats = () => {
           <div
             key={idx}
             className={`max-w-[75%] px-4 py-3 rounded-2xl shadow-md transition-all duration-300
-            ${msg.role === 'user' 
-              ? 'self-end bg-blue-600 text-white rounded-br-none hover:scale-105 transform'
-              : 'self-start bg-gray-800 text-white rounded-bl-none hover:scale-105 transform'
-            }`}
+            ${msg.role === 'user'
+                ? 'self-end bg-blue-600 text-white rounded-br-none hover:scale-105 transform'
+                : 'self-start bg-gray-800 text-white rounded-bl-none hover:scale-105 transform'
+              }`}
           >
             {msg.role === "ai" ? (
               <ReactMarkdown
