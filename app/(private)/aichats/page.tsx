@@ -51,7 +51,15 @@ const AiChats = () => {
 
       {/* Header */}
       <div className='flex items-center justify-between p-4 sm:p-6 border-b border-white/20 z-10 relative'>
+      <div>
+
         <h1 className='text-white font-semibold text-[18px] sm:text-[20px] md:text-[22px] pl-2 sm:pl-4'>Cognivue AI Chat</h1>
+
+      </div>
+
+      <div className='bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm cursor-pointer'  >
+        New Chat
+      </div>
       </div>
 
       {/* Chat Messages */}
