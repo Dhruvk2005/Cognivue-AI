@@ -50,29 +50,15 @@ const AiChats = () => {
       </div>
 
       {/* Header */}
-     <div className='flex  border-b-1 border-white/40  flex-wrap p-[10px] sm:p-[15px] items-center justify-between gap-[10px]'>
+      <div className='flex items-center justify-between p-4 sm:p-6 border-b border-white/20 z-10 relative'>
+        <div>
 
-        <div className='text-[white] font-semibold pl-[10px] sm:pl-[20px] text-[16px] sm:text-[18px] md:text-[20px]  '>
-          Cognivue Chat
+          <h1 className='text-white font-semibold text-[18px] sm:text-[20px] md:text-[22px] pl-2 sm:pl-4'>Cognivue AI Chat</h1>
+
         </div>
-        <div className='flex items-center gap-[8px] sm:gap-[10px] flex-wrap'>
-          <div className='flex items-center bg-[white] text-[black] gap-[5px] p-[8px] sm:p-[10px] rounded-[30px] cursor-pointer hover:opacity-90 transition-opacity'>
-            <div className='text-[12px] sm:text-[14px] md:text-[15px]' >
-              Share
-            </div>
-            <div>
-              <Icon icon="lucide:share" width="14" height="14" className='sm:w-[15px] sm:h-[15px]' style={{ color: "#000000ff" }} />
-            </div>
-          </div>
 
-          <div className='flex text-[12px] sm:text-[14px] md:text-[15px] gap-[5px] items-center bg-gradient-to-r p-[8px] sm:p-[10px] rounded-[30px] from-blue-500 to-purple-600 text-[white] cursor-pointer hover:opacity-90 transition-opacity'>
-            <div>
-              New Chat
-            </div>
-            <div>
-              <Icon icon="ri:chat-ai-fill" width="14" height="14" className='sm:w-[15px] sm:h-[15px]' style={{ color: "#fff" }} />
-            </div>
-          </div>
+        <div className='bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm cursor-pointer'  >
+          New Chat
         </div>
       </div>
 
