@@ -7,7 +7,7 @@ import Footer from '@/app/(private)/component/footer'
 
 const Mainscreen = () => {
   return (
-    <div className='' >
+    <div className='select-none' >
 
       
 
