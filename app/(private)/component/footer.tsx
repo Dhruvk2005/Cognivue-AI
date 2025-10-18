@@ -47,6 +47,7 @@ const Footer = () => {
                             <li className=' hover:text-[white] ' >Terms of service</li>
                             <li className=' hover:text-[white] '>Privacy policy</li>
                             <li className=' hover:text-[white] '>Cookie policy</li>
+                            <li>  © 2025 Cognivue AI. All rights reserved.</li>
 
                         </ul>
                         
