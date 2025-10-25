@@ -1,4 +1,5 @@
-import React from 'react'
+"use client "
+import React, { useState } from 'react'
 import { Icon } from '@iconify/react/dist/iconify.js'
 import Example from './linechart'
 import ApexChartsComponent from './linechart'
@@ -7,9 +8,12 @@ import AiInsights from '../aiinsights/page'
 import aiinsightchat from './aiinsightchat'
 import ExpenseBreakdown from './expenseschart'
 import CustomerAcquisition from './acquistionchart'
+import profiledropdown from './profiledropdown'
 
 
 const Dashboardtab = () => {
+
+  const [show,setShow] = useState(false)
 
   const boxes = [
     {
@@ -51,7 +55,7 @@ const Dashboardtab = () => {
             <div className="flex items-center gap-[8px] sm:gap-[10px] mr-[10px] sm:mr-[20px] bg-gradient-to-r p-[8px] sm:p-[10px]  bg-gradient-to-r from-blue-500 to-purple-600 text-[white] bg-opacity-0 bg-cover bg-center rounded-[30px] cursor-pointer ">
 
               <Icon icon="ix:user-profile-filled" width="20" height="20" className='w-[20px] h-[20px] sm:w-[22px] sm:h-[22px] md:w-[24px] md:h-[24px]' style={{ color: "#fff" }} />
-              <div className='flex items-center gap-[8px] sm:gap-[10px] ' >
+              <div onClick={()=>{setShow(true)}}  className='flex items-center gap-[8px] sm:gap-[10px] ' >
                 <span className='text-[white] text-[14px] sm:text-[16px] md:text-[18px] font-semibold  ' >Dhruv K</span>
                 <Icon icon="line-md:chevron-down" width="16" height="16" className='w-[16px] h-[16px] sm:w-[18px] sm:h-[18px] md:w-[20px] md:h-[20px]' style={{ color: "#fff" }} />
 
@@ -198,6 +202,8 @@ const Dashboardtab = () => {
       <div>
 
       </div>
+
+      {show ? <profiledropdown setShow = {setShow} />:""}
     </div>
   )
 }

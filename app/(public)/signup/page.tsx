@@ -10,9 +10,10 @@ const Signup = () => {
     const router = useRouter()
 
     const userData = () => ({
-        name: "",
+        name: "",   
         email: "",
         password: ""
+
     })
 
 
