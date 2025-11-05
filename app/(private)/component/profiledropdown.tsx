@@ -1,14 +1,14 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 
-const profiledropdown = (props:any) => {
+const ProfileDropdown = (props:any) => {
 
     const [name, setName] = useState<any>("")
     const [email, setEmail] = useState<any>("")
 
 
     useEffect(() => {
-        const userName = localStorage.getItme("username")
+        const userName = localStorage.getItem("username")
         const email = localStorage.getItem("email")
         setName(userName)
         setEmail(email)
@@ -17,7 +17,7 @@ const profiledropdown = (props:any) => {
 
 
     return (
-        <div className='h-[200px] w-[200px] ' >
+        <div className='fixed top-0  h-[200px]  w-[200px] ' >
             <div>
                 <li>
                     <label htmlFor="text">Name</label>
@@ -40,4 +40,4 @@ const profiledropdown = (props:any) => {
     )
 }
 
-export default profiledropdown
+export default ProfileDropdown
