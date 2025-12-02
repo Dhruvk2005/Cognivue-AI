@@ -6,6 +6,7 @@ import { aiInsights } from "@/api's/allapis"
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { PluggableList } from "unified";
+import { chatWithAI } from '@/api\'s/allapis'
 
 const AiChats = () => {
   const [input, setInput] = useState('')
@@ -26,7 +27,7 @@ const AiChats = () => {
     setInput('')
 
     try {
-      const data = await aiInsights(input)
+      const data = await chatWithAI(input)
       const aiText = data?.insights || 'No response from AI'
       setMessages(prev => [...prev, { role: 'ai', text: aiText }])
     } catch (err) {

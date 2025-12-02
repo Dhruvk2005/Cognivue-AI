@@ -100,6 +100,25 @@ export const aiInsights = async (data: any) => {
     }
 }
 
+export const chatWithAI = async(data:any)=>{
+    try{
+        const res = await axios.post(
+            `https://cognivue-ai-backend.vercel.app/api/aichat/chatwithai`,
+            {data},
+            {
+                headers:{
+                    "content-Type":"application/json"
+                },
+            }
+
+        )
+        return res.data
+
+    }catch(err){
+        console.log(err)
+    }
+}
+
 
 export const fetchUpload = async () => {
     try {
