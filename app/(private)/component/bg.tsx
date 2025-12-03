@@ -80,7 +80,7 @@ export default function AnimatedAuroraBackground() {
             <div className='fixed top-0 left-0 right-0 w-full z-50 bg-black/20 backdrop-blur-sm'>
                 <div className='flex items-center justify-between w-full p-[20px]'>
                     <div className='  sm:text-[20px] text-white '>
-                        Cognivue AI
+                       CROOSE AI
                     </div>
 
                     <div className="flex items-center gap-[20px]">
@@ -110,7 +110,7 @@ hover:scale-105 hover:shadow-lg text-white font-semibold rounded-full shadow-md
                             Smarter Business Decisions with AI
                         </h2>
                         <h3 className=" text-[15px] sm:text-[20px] lg:text-2xl text-[#E0E0E0] mb-8">
-                            Cognivue AI analyzes your business data and gives you actionable insights in seconds
+                            Croose AI analyzes your business data and gives you actionable insights in seconds
                         </h3>
                     </div>
 
